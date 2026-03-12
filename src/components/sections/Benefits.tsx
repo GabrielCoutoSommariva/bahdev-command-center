@@ -11,6 +11,14 @@ const benefits = [
   { icon: Expand, title: "Escala sem caos", desc: "Cresça a rede sem perder controle, governança ou padrão." },
 ];
 
+const differentials = [
+  "Implantação consultiva e gradual",
+  "Adaptação por módulos, sem travar a operação",
+  "Foco em operações reais, não em features genéricas",
+  "Visibilidade para gestão com indicadores consolidados",
+  "Centralização com governança e controle de acesso",
+];
+
 const Benefits = () => (
   <SectionWrapper id="beneficios">
     <AnimatedBlock className="text-center mb-16">
@@ -27,7 +35,7 @@ const Benefits = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16"
     >
       {benefits.map((b) => (
         <motion.div
@@ -43,6 +51,23 @@ const Benefits = () => (
         </motion.div>
       ))}
     </motion.div>
+
+    {/* Differentials strip */}
+    <AnimatedBlock delay={0.15} className="max-w-4xl mx-auto">
+      <div className="p-8 rounded-2xl bg-primary/5 border border-primary/10">
+        <h3 className="text-card-title text-foreground mb-4 text-center">
+          Mais do que software. Uma base de organização operacional.
+        </h3>
+        <div className="flex flex-wrap justify-center gap-3">
+          {differentials.map((d) => (
+            <span key={d} className="inline-flex items-center gap-1.5 text-sm text-foreground/80 bg-card rounded-full px-4 py-2 shadow-card">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+              {d}
+            </span>
+          ))}
+        </div>
+      </div>
+    </AnimatedBlock>
   </SectionWrapper>
 );
 
