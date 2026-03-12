@@ -53,7 +53,7 @@ const CaseStudy = () => (
     </AnimatedBlock>
 
     <AnimatedBlock className="text-center mt-10">
-      <Button variant="hero" size="lg" asChild>
+      <Button variant="hero" size="lg" className="text-white" asChild>
         <a href="#demo">
           Quero ver no meu cenário
           <ArrowRight className="ml-2 h-4 w-4" />
