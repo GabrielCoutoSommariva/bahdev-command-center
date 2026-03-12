@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
-import { LayoutDashboard, GitPullRequestArrow, MessageCircle, BarChart4, Megaphone, ShieldCheck, Puzzle } from "lucide-react";
+import { LayoutDashboard, GitPullRequestArrow, MessageCircle, BarChart4, Megaphone, ShieldCheck, Puzzle, Wallet, Bot } from "lucide-react";
 import solutionScreenshot from "@/assets/farmacias-dashboard.png";
 
 const modules = [
-  { icon: LayoutDashboard, title: "Portal do associado", desc: "Canal único de acesso para cada unidade da rede." },
-  { icon: GitPullRequestArrow, title: "Workflow de solicitações", desc: "Solicitações, aprovações e entregas com rastreabilidade total." },
-  { icon: MessageCircle, title: "Comunicação centralizada", desc: "Avisos, comunicados e atualizações em um só lugar." },
-  { icon: BarChart4, title: "Indicadores e dashboards", desc: "Métricas em tempo real para decisões baseadas em dados." },
-  { icon: Megaphone, title: "Gestão de campanhas", desc: "Crie, distribua e acompanhe campanhas para a rede." },
-  { icon: ShieldCheck, title: "Permissões por perfil", desc: "Controle de acesso granular por cargo e unidade." },
-  { icon: Puzzle, title: "Integrações", desc: "Base pronta para conectar ERPs, CRMs e automações." },
+  { icon: LayoutDashboard, title: "Portal do Associado", desc: "A 'casa' oficial: comunicados, circulares, campanhas, materiais e serviços." },
+  { icon: GitPullRequestArrow, title: "Workflow de pedidos e aprovações", desc: "Fluxos prontos: solicitações, validações, prazos, responsáveis e histórico." },
+  { icon: Megaphone, title: "Gestão de campanhas", desc: "Do briefing ao material: calendário, execução, entregas e acompanhamento." },
+  { icon: MessageCircle, title: "Comunicação centralizada", desc: "Segmentação por perfil/unidade, avisos com rastreio e histórico." },
+  { icon: BarChart4, title: "Dashboards e indicadores", desc: "Visões por unidade/região/gestão para decidir com base em dados." },
+  { icon: Wallet, title: "Financeiro e pendências", desc: "Visibilidade, controle, emissões e acompanhamento por unidade." },
+  { icon: ShieldCheck, title: "Usuários e permissões", desc: "Perfis por função, unidade, time e níveis de aprovação." },
+  { icon: Puzzle, title: "Integrações", desc: "WhatsApp, sistemas internos, BI e fontes de dados do ecossistema." },
+  { icon: Bot, title: "Base para IA e automações", desc: "Processos bem definidos + dados centralizados = automação de verdade." },
 ];
 
 const Solution = () => (
@@ -21,12 +23,11 @@ const Solution = () => (
           A solução
         </p>
         <h2 className="text-section text-foreground mb-6">
-          Um ecossistema modular para redes que precisam de controle
+          A Bahdev é uma plataforma modular para transformar rotina em processo
         </h2>
         <p className="text-body text-muted-foreground max-w-[55ch] mb-8">
-          A Bahdev reúne comunicação, workflows, indicadores e governança em uma
-          plataforma única. Sua rede opera com padrão, visibilidade e escala —
-          sem depender de improviso.
+          Um único portal para gestão, comunicação e operação — com módulos que
+          você ativa conforme a maturidade da sua rede.
         </p>
       </AnimatedBlock>
 
@@ -47,7 +48,7 @@ const Solution = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
+      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
     >
       {modules.map((mod) => (
         <motion.div

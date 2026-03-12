@@ -3,20 +3,21 @@ import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "
 import { Volume2, Eye, Layers, Zap, LineChart, Expand } from "lucide-react";
 
 const benefits = [
-  { icon: Volume2, title: "Menos ruído, mais clareza", desc: "A informação certa chega ao lugar certo, sem se perder entre canais." },
-  { icon: Eye, title: "Visibilidade para a gestão", desc: "Dashboards em tempo real mostram o status de toda a operação." },
-  { icon: Layers, title: "Mais padrão entre unidades", desc: "Processos unificados garantem qualidade consistente na rede." },
-  { icon: Zap, title: "Mais produtividade", desc: "Automações e workflows eliminam o retrabalho manual." },
-  { icon: LineChart, title: "Decisão baseada em dados", desc: "Indicadores reais substituem percepções e achismos." },
-  { icon: Expand, title: "Escala sem caos", desc: "Cresça a rede sem perder controle, governança ou padrão." },
+  { icon: Volume2, title: "Menos ruído, mais clareza", desc: "A informação certa no lugar certo — com histórico e padrão." },
+  { icon: Eye, title: "Associado mais tranquilo e confiante", desc: "Visibilidade do que está acontecendo e previsibilidade de atendimento." },
+  { icon: Zap, title: "Time mais produtivo", desc: "Menos retrabalho, menos 'cadê?', mais execução com fluxo." },
+  { icon: Layers, title: "Padronização sem engessar", desc: "Padrão no processo e flexibilidade na personalização por rede." },
+  { icon: LineChart, title: "Decisão baseada em dados", desc: "Indicadores para priorizar, justificar e melhorar continuamente." },
+  { icon: Expand, title: "Escala sem caos", desc: "Crescer com controle: processos replicáveis e governança." },
 ];
 
 const differentials = [
-  "Implantação consultiva e gradual",
-  "Adaptação por módulos, sem travar a operação",
-  "Foco em operações reais, não em features genéricas",
-  "Visibilidade para gestão com indicadores consolidados",
-  "Centralização com governança e controle de acesso",
+  { title: "Feita para associações e cooperativas", desc: "A estrutura já considera rede, unidade, perfil e governança." },
+  { title: "Workflow já pronto", desc: "Fluxos reais, não 'um Kanban vazio' que você precisa inventar." },
+  { title: "Visão de negócio", desc: "Indicadores e acompanhamento de status para gestão e diretoria." },
+  { title: "Modular e escalável", desc: "Comece pelo essencial e evolua sem trocar de plataforma." },
+  { title: "Suporte consultivo", desc: "Ajuda a ajustar processo e adoção — não só 'suporte técnico'." },
+  { title: "Evolução contínua", desc: "O produto melhora junto com sua maturidade operacional e de dados." },
 ];
 
 const Benefits = () => (
@@ -26,7 +27,7 @@ const Benefits = () => (
         Benefícios
       </p>
       <h2 className="text-section text-foreground mb-4">
-        O que muda quando a operação ganha visibilidade
+        O que muda na prática (e por que o associado sente isso)
       </h2>
     </AnimatedBlock>
 
@@ -35,7 +36,7 @@ const Benefits = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16"
+      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20"
     >
       {benefits.map((b) => (
         <motion.div
@@ -52,22 +53,39 @@ const Benefits = () => (
       ))}
     </motion.div>
 
-    {/* Differentials strip */}
-    <AnimatedBlock delay={0.15} className="max-w-4xl mx-auto">
-      <div className="p-8 rounded-2xl bg-primary/5 border border-primary/10">
-        <h3 className="text-card-title text-foreground mb-4 text-center">
-          Mais do que software. Uma base de organização operacional.
+    {/* Differentials */}
+    <AnimatedBlock delay={0.15}>
+      <div className="text-center mb-10">
+        <p className="text-caption text-primary font-semibold mb-3 uppercase tracking-wider">
+          Diferenciais
+        </p>
+        <h3 className="text-card-title text-foreground text-xl">
+          Não é "mais um sistema". É um portal pensado para rede.
         </h3>
-        <div className="flex flex-wrap justify-center gap-3">
-          {differentials.map((d) => (
-            <span key={d} className="inline-flex items-center gap-1.5 text-sm text-foreground/80 bg-card rounded-full px-4 py-2 shadow-card">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-              {d}
-            </span>
-          ))}
-        </div>
+        <p className="text-body text-muted-foreground max-w-2xl mx-auto mt-2">
+          A Bahdev nasce da realidade de associações e cooperativas: demanda alta, múltiplas unidades, necessidade de governança e velocidade ao mesmo tempo.
+        </p>
       </div>
     </AnimatedBlock>
+
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
+    >
+      {differentials.map((d) => (
+        <motion.div
+          key={d.title}
+          variants={itemVariants}
+          className="p-6 rounded-2xl bg-primary/5 border border-primary/10"
+        >
+          <h4 className="text-sm font-bold text-foreground mb-1">{d.title}</h4>
+          <p className="text-sm text-muted-foreground">{d.desc}</p>
+        </motion.div>
+      ))}
+    </motion.div>
   </SectionWrapper>
 );
 

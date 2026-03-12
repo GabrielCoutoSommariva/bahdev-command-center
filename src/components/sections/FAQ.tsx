@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const WHATSAPP_URL = `https://wa.me/5500000000000?text=${encodeURIComponent("Olá, tenho dúvidas sobre a Bahdev.")}`;
+const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, tenho dúvidas sobre a Bahdev.")}`;
 
 const faqs = [
   {
