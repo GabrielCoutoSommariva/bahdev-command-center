@@ -12,6 +12,12 @@ const steps = [
   { icon: TrendingUp, num: "05", title: "Evolução", desc: "Novos módulos conforme a maturidade." },
 ];
 
+const quickWins = [
+  { title: "Comunicação oficial + histórico", desc: "Um lugar único para avisos e campanhas — sem mensagens perdidas." },
+  { title: "Pedidos com aprovação", desc: "Fluxos com responsáveis, prazos e rastreio — sem planilha." },
+  { title: "Indicadores em tempo real", desc: "Painéis por unidade/região para decisões sem relatórios manuais." },
+];
+
 const HowItWorks = () => (
   <SectionWrapper className="bg-muted/50" id="como-funciona">
     <AnimatedBlock className="text-center mb-10">
@@ -40,6 +46,20 @@ const HowItWorks = () => (
         </motion.div>
       ))}
     </motion.div>
+
+    {/* Quick wins */}
+    <AnimatedBlock delay={0.1} className="max-w-4xl mx-auto mb-10">
+      <h3 className="text-sm font-bold text-foreground text-center mb-1">O que você ganha rápido</h3>
+      <p className="text-xs text-muted-foreground text-center mb-6">Primeiros resultados que geram confiança.</p>
+      <div className="grid md:grid-cols-3 gap-4">
+        {quickWins.map((w) => (
+          <div key={w.title} className="p-5 rounded-xl bg-card shadow-card">
+            <h4 className="text-sm font-bold text-foreground mb-1">{w.title}</h4>
+            <p className="text-xs text-muted-foreground">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </AnimatedBlock>
 
     <AnimatedBlock className="text-center">
       <Button variant="hero" size="lg" asChild>

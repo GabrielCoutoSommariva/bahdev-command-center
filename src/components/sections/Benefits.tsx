@@ -11,6 +11,15 @@ const benefits = [
   { icon: Expand, title: "Escala com controle", desc: "Crescer com governança e processos replicáveis." },
 ];
 
+const differentials = [
+  { title: "Feita para associações e cooperativas", desc: "Estrutura pensada para rede, unidade e governança." },
+  { title: "Workflow já pronto", desc: "Fluxos reais, não um Kanban vazio." },
+  { title: "Visão de negócio", desc: "Indicadores para gestão e diretoria." },
+  { title: "Modular e escalável", desc: "Comece pelo essencial, evolua sem trocar de plataforma." },
+  { title: "Suporte consultivo", desc: "Ajuda a ajustar processo e adoção." },
+  { title: "Evolução contínua", desc: "Produto melhora junto com sua maturidade." },
+];
+
 const Benefits = () => (
   <SectionWrapper id="beneficios">
     <AnimatedBlock className="text-center mb-10">
@@ -23,7 +32,7 @@ const Benefits = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto"
+      className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto mb-14"
     >
       {benefits.map((b) => (
         <motion.div key={b.title} variants={itemVariants} className="p-5 md:p-6 rounded-xl bg-card shadow-card hover:shadow-card-hover transition-shadow">
@@ -32,6 +41,27 @@ const Benefits = () => (
           </div>
           <h3 className="text-sm font-bold text-card-foreground mb-1">{b.title}</h3>
           <p className="text-xs md:text-sm text-muted-foreground">{b.desc}</p>
+        </motion.div>
+      ))}
+    </motion.div>
+
+    {/* Differentials */}
+    <AnimatedBlock className="text-center mb-8">
+      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Diferenciais</p>
+      <h3 className="text-card-title text-foreground">Portal pensado para rede, não "mais um sistema".</h3>
+    </AnimatedBlock>
+
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto"
+    >
+      {differentials.map((d) => (
+        <motion.div key={d.title} variants={itemVariants} className="p-4 md:p-5 rounded-xl bg-primary/5 border border-primary/10">
+          <h4 className="text-xs md:text-sm font-bold text-foreground mb-1">{d.title}</h4>
+          <p className="text-xs text-muted-foreground">{d.desc}</p>
         </motion.div>
       ))}
     </motion.div>
