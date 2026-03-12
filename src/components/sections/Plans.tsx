@@ -70,7 +70,7 @@ const Plans = () => (
             <Button
               variant={plan.highlighted ? "default" : "hero"}
               size="lg"
-              className={plan.highlighted ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold shadow-md" : ""}
+              className={plan.highlighted ? "bg-white text-primary hover:bg-white/90 font-semibold shadow-md" : ""}
               asChild
             >
               <a href="#demo">

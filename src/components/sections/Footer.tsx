@@ -12,7 +12,7 @@ const Footer = () => (
         Em 30 minutos, mostramos como centralizar comunicação, workflow e indicadores.
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <Button variant="hero" size="lg" asChild>
+        <Button variant="hero" size="lg" className="text-white" asChild>
           <a href="#demo">Solicitar demonstração <ArrowRight className="ml-2 h-4 w-4" /></a>
         </Button>
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm opacity-70 hover:opacity-100 transition-opacity">
