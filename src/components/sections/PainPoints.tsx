@@ -6,32 +6,32 @@ const pains = [
   {
     icon: MessageSquareWarning,
     title: "Comunicação fragmentada",
-    description: "WhatsApp, e-mail, ligação, planilha. A informação se perde entre canais e ninguém sabe o status real.",
+    description: "WhatsApp, e-mail, ligação, planilha. A informação se perde e ninguém sabe o status real.",
   },
   {
     icon: Repeat,
     title: "Retrabalho constante",
-    description: "Solicitações duplicadas, aprovações sem rastreio e processos que recomeçam do zero a cada nova demanda.",
+    description: "Solicitações duplicadas, aprovações sem rastreio e processos que recomeçam do zero.",
   },
   {
     icon: Eye,
     title: "Baixa visibilidade",
-    description: "A diretoria não enxerga o que acontece na ponta. Decisões são tomadas por percepção, não por dados.",
+    description: "A diretoria não enxerga o que acontece na ponta. Decisões por percepção, não por dados.",
   },
   {
     icon: ShieldAlert,
     title: "Perda de padrão",
-    description: "Cada unidade opera de um jeito. Não existe governança, e a qualidade da entrega varia de filial para filial.",
+    description: "Cada unidade opera de um jeito. A qualidade varia de filial para filial.",
   },
   {
     icon: BarChart3,
     title: "Indicadores inexistentes",
-    description: "Sem dashboards, sem métricas consolidadas. A gestão fica refém de relatórios manuais atrasados.",
+    description: "Sem dashboards, sem métricas consolidadas. Gestão refém de relatórios manuais.",
   },
   {
     icon: AlertTriangle,
     title: "Decisão por improviso",
-    description: "Sem um sistema central, cada problema gera uma solução pontual. A operação cresce, mas o controle não acompanha.",
+    description: "Sem sistema central, cada problema gera solução pontual. A operação cresce, o controle não.",
   },
 ];
 
@@ -44,6 +44,9 @@ const PainPoints = () => (
       <h2 className="text-section">
         Os sinais de uma operação sem controle
       </h2>
+      <p className="text-body opacity-60 max-w-2xl mx-auto mt-4">
+        Se sua rede ainda depende de planilhas, grupos de WhatsApp e improviso para funcionar, o custo invisível já está alto.
+      </p>
     </AnimatedBlock>
 
     <motion.div

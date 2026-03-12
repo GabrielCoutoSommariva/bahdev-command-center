@@ -1,22 +1,35 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+
+const WHATSAPP_URL = `https://wa.me/5500000000000?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
 const Footer = () => (
-  <footer className="bg-foreground text-background">
+  <footer className="bg-foreground text-background pb-24 md:pb-0">
     {/* Final CTA */}
     <div className="container mx-auto px-6 py-20 text-center border-b border-muted/10">
       <h2 className="text-section mb-4">
-        Sua operação precisa de visibilidade,<br className="hidden sm:block" /> não de mais improviso.
+        Sua operação não precisa de mais improviso.<br className="hidden sm:block" /> Precisa de visibilidade.
       </h2>
       <p className="text-body opacity-70 max-w-xl mx-auto mb-8">
-        Agende uma demonstração consultiva e veja como a Bahdev se aplica ao seu cenário.
+        Entenda em minutos como ganhar controle, padrão e escala.
       </p>
-      <Button variant="hero" size="xl" asChild>
-        <a href="#demo">
-          Agendar demonstração
-          <ArrowRight className="ml-2 h-5 w-5" />
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button variant="hero" size="xl" asChild>
+          <a href="#demo">
+            Agendar demonstração
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </a>
+        </Button>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
+        >
+          <MessageCircle className="h-4 w-4" />
+          Prefere falar antes? Chame no WhatsApp
         </a>
-      </Button>
+      </div>
     </div>
 
     {/* Footer links */}
@@ -49,7 +62,7 @@ const Footer = () => (
           <p className="text-caption font-semibold mb-3 opacity-80">Contato</p>
           <ul className="space-y-2 text-sm opacity-60">
             <li><a href="#demo" className="hover:opacity-100 transition-opacity">Agendar demonstração</a></li>
-            <li><a href="#demo" className="hover:opacity-100 transition-opacity">Solicitar diagnóstico</a></li>
+            <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">WhatsApp</a></li>
           </ul>
         </div>
       </div>

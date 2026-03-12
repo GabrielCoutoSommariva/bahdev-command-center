@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
 import { Search, Settings, Rocket, GraduationCap, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const steps = [
-  { icon: Search, number: "01", title: "Diagnóstico", description: "Mapeamos seu cenário, fluxos e principais gargalos operacionais." },
-  { icon: Settings, number: "02", title: "Configuração", description: "Parametrizamos a plataforma com seus módulos, perfis e regras." },
-  { icon: Rocket, number: "03", title: "Implantação gradual", description: "Ativamos por grupos de unidades para garantir adoção segura." },
-  { icon: GraduationCap, number: "04", title: "Treinamento prático", description: "Capacitamos a equipe com treinamento objetivo e materiais de apoio." },
-  { icon: TrendingUp, number: "05", title: "Evolução contínua", description: "Novos módulos e ajustes conforme a operação amadurece." },
+  { icon: Search, number: "01", title: "Diagnóstico", description: "Mapeamos seu cenário, fluxos e principais gargalos." },
+  { icon: Settings, number: "02", title: "Configuração", description: "Parametrizamos a plataforma com seus módulos e regras." },
+  { icon: Rocket, number: "03", title: "Implantação gradual", description: "Ativamos por grupos para garantir adoção segura." },
+  { icon: GraduationCap, number: "04", title: "Treinamento", description: "Capacitamos sua equipe com treinamento prático." },
+  { icon: TrendingUp, number: "05", title: "Evolução contínua", description: "Novos módulos conforme a operação amadurece." },
 ];
 
 const HowItWorks = () => (
@@ -20,7 +22,7 @@ const HowItWorks = () => (
         Da complexidade à clareza em 5 passos
       </h2>
       <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-        Um processo consultivo que reduz fricção e garante adoção real.
+        Implantação consultiva e gradual. Sem parar sua operação.
       </p>
     </AnimatedBlock>
 
@@ -46,6 +48,15 @@ const HowItWorks = () => (
         </motion.div>
       ))}
     </motion.div>
+
+    <AnimatedBlock delay={0.2} className="text-center mt-12">
+      <Button variant="hero" size="lg" asChild>
+        <a href="#demo">
+          Comece pelo diagnóstico
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </a>
+      </Button>
+    </AnimatedBlock>
   </SectionWrapper>
 );
 
