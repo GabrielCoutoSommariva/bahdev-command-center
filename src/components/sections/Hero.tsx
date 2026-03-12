@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { AnimatedBlock } from "./SectionWrapper";
-import dashboardMockup from "@/assets/dashboard-mockup.jpg";
+import dashboardMockup from "@/assets/bahdev-dashboard.png";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => (
