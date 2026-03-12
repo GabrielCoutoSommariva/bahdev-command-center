@@ -34,7 +34,7 @@ const Solution = () => (
         <div className="rounded-2xl overflow-hidden shadow-product">
           <img
             src={solutionScreenshot}
-            alt="Bahdev — Workflow de aprovações e solicitações"
+            alt="Bahdev — Dashboard de indicadores e gestão da rede"
             className="w-full h-auto"
             loading="lazy"
           />
