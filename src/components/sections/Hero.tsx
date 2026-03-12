@@ -6,9 +6,9 @@ import { ArrowRight, MessageCircle, Shield, Layers, BarChart3 } from "lucide-rea
 const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
 const quickBenefits = [
-  { icon: Shield, text: "Governança e padrão" },
-  { icon: Layers, text: "Workflows centralizados" },
-  { icon: BarChart3, text: "Indicadores em tempo real" },
+  { icon: Shield, text: "Implantação gradual" },
+  { icon: Layers, text: "Visão de negócio" },
+  { icon: BarChart3, text: "Uso no dia a dia" },
 ];
 
 const Hero = () => (
@@ -22,25 +22,25 @@ const Hero = () => (
     <div className="container mx-auto px-6 relative">
       <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
         <AnimatedBlock>
-          <p className="text-caption text-primary font-semibold mb-4 uppercase tracking-wider">
-            Gestão centralizada para redes e associações
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+            <span className="text-xs font-medium text-primary bg-primary/10 rounded-full px-3 py-1">Portal + Workflow + Indicadores</span>
+            <span className="text-xs font-medium text-primary bg-primary/10 rounded-full px-3 py-1">Feito para associações e cooperativas</span>
+            <span className="text-xs font-medium text-primary bg-primary/10 rounded-full px-3 py-1">Modular, escalável e consultivo</span>
+          </div>
         </AnimatedBlock>
 
         <AnimatedBlock delay={0.1}>
           <h1 className="text-hero text-foreground mb-6">
-            Sua operação,{" "}
-            <span className="text-gradient-primary">sob controle.</span>
+            Centralize a gestão e a comunicação da sua rede em{" "}
+            <span className="text-gradient-primary">um único portal.</span>
           </h1>
         </AnimatedBlock>
 
         <AnimatedBlock delay={0.2}>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto mb-4">
-            Centralize comunicação, solicitações, campanhas e indicadores
-            em uma única plataforma. Menos improviso, mais visibilidade para decidir.
-          </p>
-          <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto mb-8">
-            Para associações, cooperativas, redes e franquias que precisam de padrão, governança e escala.
+            A Bahdev organiza campanhas, pedidos, aprovações, finanças e indicadores
+            para que a associação ganhe clareza, padronização e escala — sem depender
+            de planilhas, grupos e retrabalho.
           </p>
         </AnimatedBlock>
 
@@ -59,12 +59,12 @@ const Hero = () => (
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" asChild>
               <a href="#demo">
-                Agendar demonstração
+                Solicitar demonstração
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button variant="hero-outline" size="xl" asChild>
-              <a href="#solucao">Ver como funciona</a>
+              <a href="#solucao">Conhecer os módulos</a>
             </Button>
           </div>
           <p className="mt-4 text-xs text-muted-foreground/60 flex items-center justify-center gap-1.5">

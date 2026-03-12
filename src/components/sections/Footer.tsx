@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Mail, Phone } from "lucide-react";
 
 const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
@@ -8,15 +8,25 @@ const Footer = () => (
     {/* Final CTA */}
     <div className="container mx-auto px-6 py-20 text-center border-b border-muted/10">
       <h2 className="text-section mb-4">
-        Sua operação não precisa de mais improviso.<br className="hidden sm:block" /> Precisa de visibilidade.
+        Quer ver a Bahdev funcionando no seu cenário?
       </h2>
       <p className="text-body opacity-70 max-w-xl mx-auto mb-8">
-        Entenda em minutos como ganhar controle, padrão e escala.
+        Em 30 minutos, a gente entende seu fluxo atual e te mostra como centralizar
+        comunicação, workflow e indicadores sem travar sua operação.
       </p>
+      <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+        <span className="text-sm opacity-60">Baixo atrito</span>
+        <span className="w-1 h-1 rounded-full bg-accent opacity-40" />
+        <span className="text-sm opacity-60">Visão prática</span>
+        <span className="w-1 h-1 rounded-full bg-accent opacity-40" />
+        <span className="text-sm opacity-60">Modular</span>
+        <span className="w-1 h-1 rounded-full bg-accent opacity-40" />
+        <span className="text-sm opacity-60">Consultivo</span>
+      </div>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         <Button variant="hero" size="xl" asChild>
           <a href="#demo">
-            Agendar demonstração
+            Solicitar demonstração
             <ArrowRight className="ml-2 h-5 w-5" />
           </a>
         </Button>
@@ -37,9 +47,19 @@ const Footer = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <p className="text-lg font-extrabold mb-4">Bahdev</p>
-          <p className="text-sm opacity-60 max-w-[30ch]">
+          <p className="text-sm opacity-60 max-w-[30ch] mb-4">
             Plataforma de gestão centralizada para redes, associações e cooperativas.
           </p>
+          <div className="space-y-2 text-sm opacity-60">
+            <a href="mailto:atendimento@bahdev.com.br" className="flex items-center gap-2 hover:opacity-100 transition-opacity">
+              <Mail className="h-3.5 w-3.5" />
+              atendimento@bahdev.com.br
+            </a>
+            <a href="tel:+5551985901584" className="flex items-center gap-2 hover:opacity-100 transition-opacity">
+              <Phone className="h-3.5 w-3.5" />
+              (51) 9859-01584
+            </a>
+          </div>
         </div>
         <div>
           <p className="text-caption font-semibold mb-3 opacity-80">Plataforma</p>
@@ -63,6 +83,7 @@ const Footer = () => (
           <ul className="space-y-2 text-sm opacity-60">
             <li><a href="#demo" className="hover:opacity-100 transition-opacity">Agendar demonstração</a></li>
             <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">WhatsApp</a></li>
+            <li><a href="mailto:atendimento@bahdev.com.br" className="hover:opacity-100 transition-opacity">E-mail</a></li>
           </ul>
         </div>
       </div>

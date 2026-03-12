@@ -31,13 +31,13 @@ const TrustCTA = ({ headline, subtext, variant = "light" }: TrustCTAProps) => {
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <Button
-              variant={isBlue ? "hero-outline" : "hero"}
+              variant={isBlue ? "default" : "hero"}
               size="lg"
-              className={isBlue ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/60" : ""}
+              className={isBlue ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold" : ""}
               asChild
             >
               <a href="#demo">
-                Agendar demonstração
+                Solicitar demonstração
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
