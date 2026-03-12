@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Store, Radio, BarChart3, Rocket, Eye, Paintbrush } from "lucide-react";
-import farmaciasDashboard from "@/assets/farmacias-dashboard.png";
+import farmaciasDashboard from "@/assets/farmacias-evento.png";
 import farmaciasPortal from "@/assets/farmacias-portal.png";
 import farmaciasMapa from "@/assets/farmacias-mapa.png";
 import farmaciasLogo from "@/assets/farmacias-logo.png";
