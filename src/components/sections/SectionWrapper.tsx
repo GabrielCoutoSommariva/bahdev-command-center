@@ -9,8 +9,8 @@ interface SectionWrapperProps {
 }
 
 const SectionWrapper = ({ children, className, id }: SectionWrapperProps) => (
-  <section id={id} className={cn("py-24", className)}>
-    <div className="container mx-auto px-6">
+  <section id={id} className={cn("py-14 md:py-20", className)}>
+    <div className="container mx-auto px-5 md:px-6">
       {children}
     </div>
   </section>
@@ -18,10 +18,10 @@ const SectionWrapper = ({ children, className, id }: SectionWrapperProps) => (
 
 const AnimatedBlock = ({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) => (
   <motion.div
-    initial={{ opacity: 0, y: 12 }}
+    initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.5, ease: "easeOut", delay }}
+    transition={{ duration: 0.4, ease: "easeOut", delay }}
     className={className}
   >
     {children}
@@ -30,12 +30,12 @@ const AnimatedBlock = ({ children, className, delay = 0 }: { children: ReactNode
 
 const containerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.06 } },
+  visible: { transition: { staggerChildren: 0.05 } },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
 export { SectionWrapper, AnimatedBlock, containerVariants, itemVariants };
