@@ -1,7 +1,6 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import PainPoints from "@/components/sections/PainPoints";
-import TrustCTA from "@/components/sections/TrustCTA";
 import Solution from "@/components/sections/Solution";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
@@ -20,18 +19,9 @@ const Index = () => (
     <main>
       <Hero />
       <PainPoints />
-      <TrustCTA
-        headline="Prefere falar antes de agendar?"
-        subtext="Nosso time pode te orientar. Sem compromisso."
-      />
       <Solution />
       <HowItWorks />
       <Benefits />
-      <TrustCTA
-        headline="Entenda quais módulos fazem sentido para sua operação"
-        subtext="Fale com a equipe e receba uma recomendação personalizada."
-        variant="blue"
-      />
       <CaseStudy />
       <ForWho />
       <Plans />

@@ -12,7 +12,7 @@ const quickBenefits = [
 ];
 
 const Hero = () => (
-  <section className="pt-32 pb-24 md:pb-32 relative overflow-hidden">
+  <section className="pt-32 relative overflow-hidden">
     {/* Background */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
@@ -76,18 +76,6 @@ const Hero = () => (
           </p>
         </AnimatedBlock>
       </div>
-
-      {/* Product Screenshot */}
-      <AnimatedBlock delay={0.4} className="max-w-5xl mx-auto">
-        <div className="rounded-2xl overflow-hidden shadow-product">
-          <img
-            src={dashboardMockup}
-            alt="Bahdev — Painel de indicadores e workflows operacionais"
-            className="w-full h-auto"
-            loading="eager"
-          />
-        </div>
-      </AnimatedBlock>
     </div>
   </section>
 );
