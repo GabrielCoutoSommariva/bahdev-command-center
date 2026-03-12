@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-const WHATSAPP_URL = `https://wa.me/5500000000000?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
+const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
 const Footer = () => (
   <footer className="bg-foreground text-background pb-24 md:pb-0">

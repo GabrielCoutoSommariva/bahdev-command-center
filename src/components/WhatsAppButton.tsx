@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
 
-const WHATSAPP_NUMBER = "5500000000000"; // Replace with actual number
+const WHATSAPP_NUMBER = "5551985901584";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá, quero entender como a Bahdev pode funcionar na minha operação."
 );

@@ -3,7 +3,7 @@ import { AnimatedBlock } from "./SectionWrapper";
 import dashboardMockup from "@/assets/bahdev-dashboard.png";
 import { ArrowRight, MessageCircle, Shield, Layers, BarChart3 } from "lucide-react";
 
-const WHATSAPP_URL = `https://wa.me/5500000000000?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
+const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
 const quickBenefits = [
   { icon: Shield, text: "Governança e padrão" },
