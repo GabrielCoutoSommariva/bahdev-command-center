@@ -33,7 +33,7 @@ const Solution = () => (
       <AnimatedBlock delay={0.2}>
         <div className="rounded-2xl overflow-hidden shadow-product">
           <img
-            src={workflowMockup}
+            src={solutionScreenshot}
             alt="Bahdev — Workflow de aprovações e solicitações"
             className="w-full h-auto"
             loading="lazy"
