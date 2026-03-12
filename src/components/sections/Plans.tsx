@@ -60,9 +60,9 @@ const Plans = () => (
               ))}
             </ul>
             <Button
-              variant={plan.highlighted ? "hero-outline" : "hero"}
+              variant={plan.highlighted ? "default" : "hero"}
               size="lg"
-              className={plan.highlighted ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/60" : ""}
+              className={plan.highlighted ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold shadow-md" : ""}
               asChild
             >
               <a href="#demo">

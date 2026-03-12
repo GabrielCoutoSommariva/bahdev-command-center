@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
 import { LayoutDashboard, GitPullRequestArrow, MessageCircle, BarChart4, Megaphone, ShieldCheck, Puzzle } from "lucide-react";
-import workflowMockup from "@/assets/workflow-mockup.jpg";
+import solutionScreenshot from "@/assets/farmacias-dashboard.png";
 
 const modules = [
   { icon: LayoutDashboard, title: "Portal do associado", desc: "Canal único de acesso para cada unidade da rede." },
