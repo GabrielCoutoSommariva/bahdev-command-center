@@ -3,7 +3,7 @@ import {
   BarChart4, TrendingUp, PieChart, Map, Filter, Download,
   Eye, Layers, Zap, Target, Clock, ShieldCheck,
 } from "lucide-react";
-import dashImg from "@/assets/farmacias-dashboard.png";
+import dashImg from "@/assets/dashboard-powerbi.png";
 
 const Dashboards = () => (
   <ProductPage
