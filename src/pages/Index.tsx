@@ -2,6 +2,7 @@ import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import PainPoints from "@/components/sections/PainPoints";
 import Solution from "@/components/sections/Solution";
+import Omnichannel from "@/components/sections/Omnichannel";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
 import CaseStudy from "@/components/sections/CaseStudy";
@@ -20,6 +21,7 @@ const Index = () => (
       <Hero />
       <PainPoints />
       <Solution />
+      <Omnichannel />
       <HowItWorks />
       <Benefits />
       <CaseStudy />
