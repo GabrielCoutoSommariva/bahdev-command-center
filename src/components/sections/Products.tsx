@@ -9,8 +9,7 @@ type Product = {
   title: string;
   desc: string;
   badge: string;
-  to?: string;
-  href?: string;
+  to: string;
 };
 
 const products: Product[] = [
@@ -26,21 +25,21 @@ const products: Product[] = [
     title: "Portal do Associado",
     desc: "Comunicados, campanhas, pedidos, aprovações e materiais centralizados em um só lugar.",
     badge: "Disponível",
-    href: "#solucao",
+    to: "/portal",
   },
   {
     icon: BarChart4,
     title: "Dashboards & BI",
     desc: "Indicadores por unidade, região e setor — com visão consolidada para tomada de decisão.",
     badge: "Disponível",
-    href: "#solucao",
+    to: "/dashboards",
   },
   {
     icon: Megaphone,
     title: "Campanhas & Comunicação",
     desc: "Briefing, execução, segmentação e histórico de campanhas para toda sua rede.",
     badge: "Disponível",
-    href: "#solucao",
+    to: "/campanhas",
   },
 ];
 
@@ -90,10 +89,8 @@ const Products = () => (
           </motion.div>
         );
 
-        return p.to ? (
+        return (
           <Link key={p.title} to={p.to} className="block h-full">{content}</Link>
-        ) : (
-          <a key={p.title} href={p.href} className="block h-full">{content}</a>
         );
       })}
     </motion.div>

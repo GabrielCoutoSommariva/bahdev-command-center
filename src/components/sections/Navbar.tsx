@@ -5,12 +5,10 @@ import { cn } from "@/lib/utils";
 import logoBlue from "../../assets/bahdev-logo-blue.png";
 
 const navLinks = [
-  { label: "Solução", href: "#solucao" },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Benefícios", href: "#beneficios" },
-  { label: "Produtos", href: "#produtos" },
-  { label: "Omnichannel", href: "/omnichannel" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Produtos", href: "/#produtos" },
+  { label: "Como funciona", href: "/#como-funciona" },
+  { label: "Planos", href: "/#planos" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 const Navbar = () => {
