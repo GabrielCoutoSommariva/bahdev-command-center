@@ -39,13 +39,16 @@ const ProductPage = ({
     <main className="pt-16">
       {/* Hero */}
       <SectionWrapper className="bg-gradient-to-b from-primary/5 to-background">
-        <AnimatedBlock className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto mb-6">
           <Link
             to="/"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/15 rounded-full pl-3 pr-4 py-1.5 transition-colors"
           >
-            <ArrowLeft className="h-4 w-4" /> Voltar ao site
+            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
+            Voltar ao site
           </Link>
+        </div>
+        <AnimatedBlock className="max-w-3xl mx-auto text-center">
           <div className="inline-flex p-3 rounded-2xl bg-primary/10 mb-4">
             <HeroIcon className="h-7 w-7 text-primary" />
           </div>
