@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logoBlue from "../../assets/bahdev-logo-blue.png";
 
+const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero falar com a Bahdev.")}`;
+
 const navLinks = [
   { label: "Produtos", href: "/#produtos" },
   { label: "Como funciona", href: "/#como-funciona" },
@@ -40,10 +42,10 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="#contato">Fale conosco</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</a>
           </Button>
           <Button variant="hero" size="lg" asChild>
-            <a href="#demo">Agendar demonstração</a>
+            <a href="/#demo">Agendar demonstração</a>
           </Button>
         </div>
 
@@ -73,7 +75,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="lg" className="mt-2" asChild>
-            <a href="#demo">Agendar demonstração</a>
+            <a href="/#demo">Agendar demonstração</a>
           </Button>
         </div>
       </div>
