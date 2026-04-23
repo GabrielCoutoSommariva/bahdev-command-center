@@ -59,7 +59,7 @@ const ProductPage = ({
           <p className="text-body-lg text-muted-foreground mb-6">{description}</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild variant="hero" size="lg">
-              <a href="/#captura">Agendar demonstração</a>
+              <a href="/#demo">Agendar demonstração</a>
             </Button>
             <Button asChild variant="hero-outline" size="lg">
               <Link to="/#produtos">Ver outros produtos</Link>
@@ -150,7 +150,7 @@ const ProductPage = ({
           <p className="text-body text-white/85 mb-6 max-w-xl mx-auto">{ctaDesc}</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-              <a href="/#captura">Agendar demonstração</a>
+              <a href="/#demo">Agendar demonstração</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary bg-transparent">
               <Link to="/#produtos">Ver outros produtos</Link>

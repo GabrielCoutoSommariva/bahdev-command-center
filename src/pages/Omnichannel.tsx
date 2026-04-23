@@ -52,7 +52,7 @@ const Omnichannel = () => (
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild variant="hero" size="lg">
-              <a href="/#captura">Agendar demonstração</a>
+              <a href="/#demo">Agendar demonstração</a>
             </Button>
             <Button asChild variant="hero-outline" size="lg">
               <a href="https://wa.me/5551999999999" target="_blank" rel="noreferrer">
@@ -163,7 +163,7 @@ const Omnichannel = () => (
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-              <a href="/#captura">Agendar demonstração</a>
+              <a href="/#demo">Agendar demonstração</a>
             </Button>
             <Button
               asChild

@@ -97,7 +97,7 @@ const Products = () => (
 
     <AnimatedBlock delay={0.2} className="text-center mt-10">
       <Button asChild variant="hero" size="lg">
-        <a href="#captura">
+        <a href="/#demo">
           Quero conhecer todos os produtos
           <ArrowRight className="ml-2 h-4 w-4" />
         </a>
