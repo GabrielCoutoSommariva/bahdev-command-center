@@ -6,10 +6,10 @@ import logoBlue from "../../assets/bahdev-logo-blue.png";
 
 const navLinks = [
   { label: "Solução", href: "#solucao" },
-  { label: "Omnichannel", href: "#omnichannel" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Benefícios", href: "#beneficios" },
   { label: "Para quem", href: "#para-quem" },
+  { label: "Omnichannel", href: "/omnichannel" },
   { label: "FAQ", href: "#faq" },
 ];
 
