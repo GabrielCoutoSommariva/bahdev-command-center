@@ -13,7 +13,7 @@ export interface ProductPageProps {
   badge: string;
   title: string;
   description: string;
-  heroIcon: LucideIconType;
+  heroIcon: LucideIcon;
   screenshot?: string;
   features: Item[];
   benefits: Item[];
