@@ -10,7 +10,7 @@ const Hero = () => (
       <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
     </div>
 
-    <div className="container mx-auto px-5 md:px-6 relative">
+    <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 max-w-6xl relative">
       <div className="max-w-3xl mx-auto text-center">
         <AnimatedBlock>
           <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
