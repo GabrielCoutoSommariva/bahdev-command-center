@@ -1,14 +1,13 @@
-import { motion, type LucideIcon } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "@/components/sections/SectionWrapper";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import type { LucideIcon as LucideIconType } from "lucide-react";
+import { ArrowLeft, CheckCircle2, type LucideIcon } from "lucide-react";
 
-type Item = { icon: LucideIconType; title: string; desc: string };
+type Item = { icon: LucideIcon; title: string; desc: string };
 
 export interface ProductPageProps {
   badge: string;
