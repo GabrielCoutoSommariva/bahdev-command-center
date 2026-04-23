@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
-import { Headphones, LayoutDashboard, BarChart4, Megaphone, ArrowRight } from "lucide-react";
+import { Headphones, LayoutDashboard, BarChart4, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type Product = {
@@ -34,13 +34,6 @@ const products: Product[] = [
     badge: "Disponível",
     to: "/dashboards",
   },
-  {
-    icon: Megaphone,
-    title: "Campanhas & Comunicação",
-    desc: "Briefing, execução, segmentação e histórico de campanhas para toda sua rede.",
-    badge: "Disponível",
-    to: "/campanhas",
-  },
 ];
 
 const Products = () => (
@@ -63,7 +56,7 @@ const Products = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
     >
       {products.map((p) => {
         const content = (
