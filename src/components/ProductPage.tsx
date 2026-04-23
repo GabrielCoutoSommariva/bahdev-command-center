@@ -149,10 +149,14 @@ const ProductPage = ({
           <h2 className="text-section text-white mb-3">{ctaTitle}</h2>
           <p className="text-body text-white/85 mb-6 max-w-xl mx-auto">{ctaDesc}</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+            <Button asChild variant="hero-light" size="lg">
               <a href="/#demo">Agendar demonstração</a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary bg-transparent">
+            <Button
+              asChild
+              size="lg"
+              className="border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-primary rounded-lg font-semibold"
+            >
               <Link to="/#produtos">Ver outros produtos</Link>
             </Button>
           </div>
