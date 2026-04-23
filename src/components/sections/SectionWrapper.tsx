@@ -10,7 +10,7 @@ interface SectionWrapperProps {
 
 const SectionWrapper = ({ children, className, id }: SectionWrapperProps) => (
   <section id={id} className={cn("py-14 md:py-20", className)}>
-    <div className="container mx-auto px-5 md:px-6">
+    <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 max-w-6xl">
       {children}
     </div>
   </section>
