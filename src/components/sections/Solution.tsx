@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
 import { LayoutDashboard, GitPullRequestArrow, MessageCircle, BarChart4, Megaphone, Wallet, ShieldCheck, Puzzle, Bot } from "lucide-react";
 import solutionScreenshot from "@/assets/farmacias-dashboard.png";
+import encarteScreenshot from "@/assets/bahdev-encartes.png";
+import { useEffect, useState } from "react";
 
 const modules = [
   { icon: LayoutDashboard, title: "Portal do Associado", desc: "Comunicados, campanhas, materiais e serviços." },
@@ -26,9 +28,7 @@ const Solution = () => (
         </p>
       </AnimatedBlock>
       <AnimatedBlock delay={0.15}>
-        <div className="rounded-xl overflow-hidden shadow-product">
-          <img src={solutionScreenshot} alt="Bahdev — Dashboard" className="w-full h-auto" loading="lazy" />
-        </div>
+        <SolutionGallery />
       </AnimatedBlock>
     </div>
 
