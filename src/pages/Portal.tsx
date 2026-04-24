@@ -3,7 +3,7 @@ import {
   LayoutDashboard, Bell, FileText, Megaphone, Users, ShieldCheck,
   Wallet, Folder, Zap, Smartphone, Clock, BarChart2,
 } from "lucide-react";
-import portalImg from "@/assets/farmacias-portal.png";
+import portalImg from "@/assets/bahdev-encartes.png";
 
 const Portal = () => (
   <ProductPage

@@ -3,7 +3,7 @@ import {
   Megaphone, FileText, Send, Calendar, Tag, BarChart2,
   Users, Zap, Clock, CheckCircle2, Layers, Target,
 } from "lucide-react";
-import eventoImg from "@/assets/farmacias-evento.png";
+import eventoImg from "@/assets/bahdev-encartes.png";
 
 const Campanhas = () => (
   <ProductPage
