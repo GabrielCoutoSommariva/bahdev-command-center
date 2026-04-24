@@ -152,11 +152,7 @@ const ProductPage = ({
             <Button asChild variant="hero-light" size="lg">
               <a href="/#demo">Agendar demonstração</a>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              className="border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-primary rounded-lg font-semibold"
-            >
+            <Button asChild variant="cta-outline-white" size="lg">
               <Link to="/#produtos">Ver outros produtos</Link>
             </Button>
           </div>

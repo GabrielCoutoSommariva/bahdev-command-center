@@ -35,6 +35,9 @@ const buttonVariants = cva(
 
         "hero-outline":
           "border-2 border-primary bg-transparent !text-primary hover:bg-primary/10 hover:!text-primary active:scale-[0.97] text-cta rounded-lg font-semibold",
+
+        "cta-outline-white":
+          "border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-primary hover:shadow-lg active:scale-[0.97] text-cta rounded-lg font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",
