@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SectionWrapper, AnimatedBlock } from "./SectionWrapper";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Clock, UserCheck } from "lucide-react";
+import { Shield, Clock, UserCheck, MessageCircle } from "lucide-react";
 import { z } from "zod";
 
 const leadSchema = z.object({
@@ -14,6 +14,8 @@ const leadSchema = z.object({
 
 type LeadData = z.infer<typeof leadSchema>;
 const unitOptions = ["1-10", "11-50", "51-100", "101-500", "500+"];
+
+const WHATSAPP_NUMBER = "5551985901584";
 
 const trustSignals = [
   { icon: Clock, text: "Resposta em até 24h" },
@@ -42,7 +44,16 @@ const LeadCapture = () => {
       setErrors(fieldErrors);
       return;
     }
-    console.log("Lead submitted:", result.data);
+    const { name, company, role, units, contact } = result.data;
+    const message =
+      `Olá! Quero agendar uma demonstração da Bahdev.%0A%0A` +
+      `*Nome:* ${name}%0A` +
+      `*Empresa / Rede:* ${company}%0A` +
+      `*Cargo:* ${role}%0A` +
+      `*Unidades:* ${units}%0A` +
+      `*Contato:* ${contact}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };
 
@@ -53,8 +64,10 @@ const LeadCapture = () => {
       <SectionWrapper id="demo">
         <AnimatedBlock className="max-w-md mx-auto text-center">
           <div className="p-8 rounded-xl bg-card shadow-card">
-            <h2 className="text-section text-foreground mb-3">Obrigado!</h2>
-            <p className="text-sm text-muted-foreground">Entraremos em contato em breve.</p>
+            <h2 className="text-section text-foreground mb-3">Tudo certo!</h2>
+            <p className="text-sm text-muted-foreground">
+              Abrimos o WhatsApp com seus dados. É só enviar a mensagem para concluir o agendamento.
+            </p>
           </div>
         </AnimatedBlock>
       </SectionWrapper>
@@ -110,10 +123,12 @@ const LeadCapture = () => {
               {errors.contact && <p className="text-xs text-destructive mt-1">{errors.contact}</p>}
             </div>
             <Button variant="hero" size="lg" type="submit" className="w-full">
-              Agendar demonstração
-              <ArrowRight className="ml-2 h-4 w-4" />
+              Enviar pelo WhatsApp
+              <MessageCircle className="ml-2 h-4 w-4" />
             </Button>
-            <p className="text-xs text-center text-muted-foreground/60">Sem compromisso.</p>
+            <p className="text-xs text-center text-muted-foreground/60">
+              Seus dados serão enviados direto para nosso WhatsApp.
+            </p>
           </form>
         </AnimatedBlock>
       </div>
