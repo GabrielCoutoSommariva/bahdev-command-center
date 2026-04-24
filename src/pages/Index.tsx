@@ -8,6 +8,7 @@ import Benefits from "@/components/sections/Benefits";
 import CaseStudy from "@/components/sections/CaseStudy";
 import ForWho from "@/components/sections/ForWho";
 import Plans from "@/components/sections/Plans";
+import MissionVisionValues from "@/components/sections/MissionVisionValues";
 import LeadCapture from "@/components/sections/LeadCapture";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
@@ -28,6 +29,7 @@ const Index = () => (
       <ForWho />
       <Products />
       <Plans />
+      <MissionVisionValues />
       <LeadCapture />
       <FAQ />
     </main>
