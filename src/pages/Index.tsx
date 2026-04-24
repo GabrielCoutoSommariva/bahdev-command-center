@@ -23,15 +23,15 @@ const Index = () => (
       <Hero />
       <PainPoints />
       <Solution />
+      <Products />
       <HowItWorks />
       <Benefits />
-      <CaseStudy />
       <ForWho />
-      <Products />
+      <CaseStudy />
       <Plans />
-      <MissionVisionValues />
       <LeadCapture />
       <FAQ />
+      <MissionVisionValues />
     </main>
     <Footer />
     <WhatsAppButton />
