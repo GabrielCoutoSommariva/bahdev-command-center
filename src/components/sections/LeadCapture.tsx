@@ -46,14 +46,20 @@ const LeadCapture = () => {
     }
     const { name, company, role, units, contact } = result.data;
     const message =
-      `Olá! Quero agendar uma demonstração da Bahdev.%0A%0A` +
-      `*Nome:* ${name}%0A` +
-      `*Empresa / Rede:* ${company}%0A` +
-      `*Cargo:* ${role}%0A` +
-      `*Unidades:* ${units}%0A` +
+      `Olá! Quero agendar uma demonstração da Bahdev.\n\n` +
+      `*Nome:* ${name}\n` +
+      `*Empresa / Rede:* ${company}\n` +
+      `*Cargo:* ${role}\n` +
+      `*Unidades:* ${units}\n` +
       `*Contato:* ${contact}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     setSubmitted(true);
   };
 
