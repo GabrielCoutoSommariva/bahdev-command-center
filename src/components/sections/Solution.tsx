@@ -31,8 +31,8 @@ const SolutionGallery = () => {
   }, []);
 
   return (
-    <div className="space-y-3">
-      <div className="relative rounded-xl overflow-hidden shadow-product aspect-[16/10] bg-card">
+    <div className="flex flex-col h-full">
+      <div className="relative rounded-xl overflow-hidden shadow-product bg-card flex-1 min-h-[280px] sm:min-h-[340px] lg:min-h-[420px]">
         {gallery.map((item, i) => (
           <motion.img
             key={item.label}
@@ -46,7 +46,7 @@ const SolutionGallery = () => {
           />
         ))}
       </div>
-      <div className="flex items-center justify-center gap-2">
+      <div className="flex items-center justify-center gap-2 mt-3">
         {gallery.map((item, i) => (
           <button
             key={item.label}
