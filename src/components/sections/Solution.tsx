@@ -17,6 +17,50 @@ const modules = [
   { icon: Bot, title: "IA e Automações", desc: "Base para automação real." },
 ];
 
+const gallery = [
+  { src: solutionScreenshot, alt: "Bahdev — Dashboard de indicadores", label: "Dashboard" },
+  { src: encarteScreenshot, alt: "Bahdev — Encartes e campanhas", label: "Encartes" },
+];
+
+const SolutionGallery = () => {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % gallery.length), 4500);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="space-y-3">
+      <div className="relative rounded-xl overflow-hidden shadow-product aspect-[16/10] bg-card">
+        {gallery.map((item, i) => (
+          <motion.img
+            key={item.label}
+            src={item.src}
+            alt={item.alt}
+            loading="lazy"
+            initial={false}
+            animate={{ opacity: active === i ? 1 : 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ))}
+      </div>
+      <div className="flex items-center justify-center gap-2">
+        {gallery.map((item, i) => (
+          <button
+            key={item.label}
+            type="button"
+            onClick={() => setActive(i)}
+            aria-label={`Ver ${item.label}`}
+            className={`h-1.5 rounded-full transition-all ${active === i ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Solution = () => (
   <SectionWrapper id="solucao">
     <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
