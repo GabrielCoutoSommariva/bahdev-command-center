@@ -31,8 +31,8 @@ const SolutionGallery = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="relative rounded-xl overflow-hidden shadow-product bg-card flex-1 min-h-[280px] sm:min-h-[340px] lg:min-h-[420px]">
+    <div className="flex flex-col">
+      <div className="relative rounded-xl overflow-hidden shadow-product bg-card aspect-[16/9]">
         {gallery.map((item, i) => (
           <motion.img
             key={item.label}
