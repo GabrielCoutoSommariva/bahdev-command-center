@@ -1,7 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, Mail, Phone } from "lucide-react";
+import fecomercioSenacLogo from "../../assets/programa-fecomercio-senac.png";
+import iabLogo from "../../assets/programa-iab.png";
 
 const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
+
+const memberPrograms = [
+  {
+    name: "Fecomercio RS e Senac",
+    logo: fecomercioSenacLogo,
+    className: "w-72",
+  },
+  {
+    name: "IAB",
+    logo: iabLogo,
+    className: "w-36",
+  },
+];
 
 const Footer = () => (
   <footer className="bg-foreground text-background pb-20 md:pb-0">
@@ -55,6 +70,26 @@ const Footer = () => (
             <li><a href="/#demo" className="hover:opacity-100">Demonstração</a></li>
             <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-100">WhatsApp</a></li>
           </ul>
+        </div>
+      </div>
+      <div className="mt-8 pt-6 border-t border-muted/10">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] opacity-50 mb-4">
+          Programas que participamos
+        </p>
+        <div className="flex flex-wrap items-center gap-3">
+          {memberPrograms.map((program) => (
+            <div
+              key={program.name}
+              className={`${program.className} h-20 rounded-md bg-white px-4 py-3 shadow-sm`}
+            >
+              <img
+                src={program.logo}
+                alt={program.name}
+                className="h-full w-full object-contain object-center"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div className="mt-8 pt-6 border-t border-muted/10 text-center">
