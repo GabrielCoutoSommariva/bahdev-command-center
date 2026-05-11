@@ -49,6 +49,18 @@ const RegionMap = () => {
     };
   }, [api]);
 
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const autoplay = window.setInterval(() => {
+      api.scrollNext();
+    }, 4000);
+
+    return () => window.clearInterval(autoplay);
+  }, [api]);
+
   return (
     <SectionWrapper className="bg-muted/30" id="onde-chegou">
 
