@@ -16,11 +16,11 @@ const RegionMap = () => (
     </AnimatedBlock>
 
     <AnimatedBlock>
-      <div className="rounded-[2rem] overflow-hidden border border-muted/10 shadow-card">
+      <div className="rounded-[2rem] overflow-hidden p-6">
         <img
           src={bahdevRegionMap}
           alt="Mapa das regiões onde a bahdev já chegou"
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-cover rounded-lg"
           loading="lazy"
         />
       </div>
