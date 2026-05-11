@@ -6,6 +6,7 @@ import Products from "@/components/sections/Products";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
 import CaseStudy from "@/components/sections/CaseStudy";
+import RegionMap from "@/components/sections/RegionMap";
 import ForWho from "@/components/sections/ForWho";
 import Plans from "@/components/sections/Plans";
 import MissionVisionValues from "@/components/sections/MissionVisionValues";
@@ -21,6 +22,7 @@ const Index = () => (
     <Navbar />
     <main>
       <Hero />
+      <RegionMap />
       <PainPoints />
       <Solution />
       <Products />
