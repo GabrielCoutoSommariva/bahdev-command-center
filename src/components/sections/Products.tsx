@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import omnichannelImage from "@/assets/omnichannel-platform.png";
 import portalImage from "@/assets/farmacias-portal.png";
-import dashboardImage from "@/assets/dashboard-powerbi.png";
 import treinamentoImage from "@/assets/dashboard-bahdev-treinamento.png";
 
 type Product = {
@@ -38,15 +37,6 @@ const products: Product[] = [
     accent: "from-violet-500/20 via-blue-500/10 to-transparent",
   },
   {
-    title: "Dashboards & BI",
-    desc: "Indicadores por unidade, região e setor — com visão consolidada para tomada de decisão.",
-    badge: "Disponível",
-    to: "/dashboards",
-    image: dashboardImage,
-    imageAlt: "Dashboard de BI com gráficos e indicadores de desempenho",
-    accent: "from-emerald-400/20 via-blue-500/10 to-transparent",
-  },
-  {
     title: "Treinamento Capacitação",
     desc: "Painel completo para cursos, trilhas, usuários, certificados, gamificação e relatórios de aprendizagem.",
     badge: "Novo módulo",
@@ -77,7 +67,7 @@ const Products = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto"
+      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
     >
       {products.map((p) => {
         const content = (

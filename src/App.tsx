@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "./components/ScrollToTop";
+import SpaRedirectHandler from "./components/SpaRedirectHandler";
 import Index from "./pages/Index.tsx";
 import Omnichannel from "./pages/Omnichannel.tsx";
 import Portal from "./pages/Portal.tsx";
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <SpaRedirectHandler />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />

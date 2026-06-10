@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import bahdevRegionMap from "@/assets/bahdev_region_map.png";
 import bahdevGramadoStand from "@/assets/bahdev-gramado-stand.jpg";
+import bannerCaldeira from "@/assets/banner-caldeira.png";
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +13,13 @@ import {
 import { SectionWrapper, AnimatedBlock } from "./SectionWrapper";
 
 const newsItems = [
+  {
+    title: "A Bahdev agora também faz parte do Instituto Caldeira",
+    description:
+      "Estar no Caldeira coloca a Bahdev ainda mais perto de novas ideias, conexões e oportunidades. É um passo importante para continuar evoluindo, trocando experiências e construindo soluções.",
+    image: bannerCaldeira,
+    alt: "Banner com as marcas do Instituto Caldeira e Bahdev",
+  },
   {
     title: "Onde a Bahdev já chegou",
     description:

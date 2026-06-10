@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageCircle, Mail, Phone } from "lucide-react";
+import { ArrowRight, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import fecomercioSenacLogo from "../../assets/programa-fecomercio-senac.png";
 import foundersClubPrimeLogo from "../../assets/programa-founders-club-prime.svg";
 import iabLogo from "../../assets/programa-iab.png";
@@ -7,26 +7,39 @@ import membroCaldeiraLogo from "../../assets/programa-membro-caldeira.png";
 
 const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
-const memberPrograms = [
+const programGroups = [
   {
-    name: "Fecomercio RS e Senac",
-    logo: fecomercioSenacLogo,
-    className: "w-72",
+    title: "Programas que participamos",
+    programs: [
+      {
+        name: "Fecomercio RS e Senac",
+        logo: fecomercioSenacLogo,
+        className: "w-72",
+        imageClassName: "scale-125",
+      },
+      {
+        name: "IAB",
+        logo: iabLogo,
+        className: "w-36",
+        imageClassName: "scale-90",
+      },
+    ],
   },
   {
-    name: "IAB",
-    logo: iabLogo,
-    className: "w-36",
-  },
-  {
-    name: "Founders Club Prime",
-    logo: foundersClubPrimeLogo,
-    className: "w-72",
-  },
-  {
-    name: "Membro Caldeira",
-    logo: membroCaldeiraLogo,
-    className: "w-40",
+    title: "Membros",
+    programs: [
+      {
+        name: "Founders Club Prime",
+        logo: foundersClubPrimeLogo,
+        className: "w-72",
+      },
+      {
+        name: "Membro Caldeira",
+        logo: membroCaldeiraLogo,
+        className: "w-40",
+        href: "https://institutocaldeira.org.br",
+      },
+    ],
   },
 ];
 
@@ -57,6 +70,10 @@ const Footer = () => (
           <div className="space-y-1.5 text-xs opacity-60">
             <a href="mailto:atendimento@bahdev.com.br" className="flex items-center gap-1.5 hover:opacity-100"><Mail className="h-3 w-3" />atendimento@bahdev.com.br</a>
             <a href="tel:+5551985901584" className="flex items-center gap-1.5 hover:opacity-100"><Phone className="h-3 w-3" />(51) 98590-1584</a>
+            <a href="https://maps.google.com/?q=Tv.+Sao+Jose,+455,+Navegantes,+Porto+Alegre,+RS" target="_blank" rel="noopener noreferrer" className="flex items-start gap-1.5 hover:opacity-100">
+              <MapPin className="h-3 w-3 shrink-0 mt-0.5" />
+              <span>Tv. São José, 455, Navegantes, Porto Alegre - RS, 90240-200</span>
+            </a>
           </div>
         </div>
         <div>
@@ -84,25 +101,36 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      <div className="mt-8 pt-6 border-t border-muted/10">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] opacity-50 mb-4">
-          Programas que participamos
-        </p>
-        <div className="flex flex-wrap items-center gap-3">
-          {memberPrograms.map((program) => (
-            <div
-              key={program.name}
-              className={`${program.className} h-20 rounded-md bg-white px-4 py-3 shadow-sm`}
-            >
-              <img
-                src={program.logo}
-                alt={program.name}
-                className="h-full w-full object-contain object-center"
-                loading="lazy"
-              />
+      <div className="mt-8 pt-6 border-t border-muted/10 grid gap-6 lg:grid-cols-2">
+        {programGroups.map((group) => (
+          <div key={group.title}>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] opacity-50 mb-4">
+              {group.title}
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              {group.programs.map((program) => {
+                const card = (
+                  <div className={`${program.className} h-20 rounded-md bg-white px-4 py-3 shadow-sm`}>
+                    <img
+                      src={program.logo}
+                      alt={program.name}
+                      className={`h-full w-full object-contain object-center ${program.imageClassName ?? ""}`}
+                      loading="lazy"
+                    />
+                  </div>
+                );
+
+                return program.href ? (
+                  <a key={program.name} href={program.href} target="_blank" rel="noopener noreferrer" aria-label={`Abrir site ${program.name}`}>
+                    {card}
+                  </a>
+                ) : (
+                  <div key={program.name}>{card}</div>
+                );
+              })}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
       <div className="mt-8 pt-6 border-t border-muted/10 text-center">
         <p className="text-xs opacity-40">© {new Date().getFullYear()} Bahdev. Todos os direitos reservados.</p>
