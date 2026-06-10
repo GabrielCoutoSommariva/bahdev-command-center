@@ -1,38 +1,59 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
-import { Headphones, LayoutDashboard, BarChart4, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import omnichannelImage from "@/assets/omnichannel-platform.png";
+import portalImage from "@/assets/farmacias-portal.png";
+import dashboardImage from "@/assets/dashboard-powerbi.png";
+import treinamentoImage from "@/assets/dashboard-bahdev-treinamento.png";
 
 type Product = {
-  icon: typeof Headphones;
   title: string;
   desc: string;
   badge: string;
   to: string;
+  image: string;
+  imageAlt: string;
+  accent: string;
 };
 
 const products: Product[] = [
   {
-    icon: Headphones,
     title: "Plataforma Omnichannel",
     desc: "Atendimento unificado para WhatsApp, chat, e-mail e redes — com bots, equipes e métricas.",
     badge: "Disponível",
     to: "/omnichannel",
+    image: omnichannelImage,
+    imageAlt: "Interface de atendimento omnichannel com conversas e métricas",
+    accent: "from-blue-500/25 via-cyan-400/10 to-transparent",
   },
   {
-    icon: LayoutDashboard,
     title: "Portal do Associado",
     desc: "Comunicados, campanhas, pedidos, aprovações e materiais centralizados em um só lugar.",
     badge: "Disponível",
     to: "/portal",
+    image: portalImage,
+    imageAlt: "Portal do associado com área de gestão e comunicados",
+    accent: "from-violet-500/20 via-blue-500/10 to-transparent",
   },
   {
-    icon: BarChart4,
     title: "Dashboards & BI",
     desc: "Indicadores por unidade, região e setor — com visão consolidada para tomada de decisão.",
     badge: "Disponível",
     to: "/dashboards",
+    image: dashboardImage,
+    imageAlt: "Dashboard de BI com gráficos e indicadores de desempenho",
+    accent: "from-emerald-400/20 via-blue-500/10 to-transparent",
+  },
+  {
+    title: "Treinamento Capacitação",
+    desc: "Painel completo para cursos, trilhas, usuários, certificados, gamificação e relatórios de aprendizagem.",
+    badge: "Novo módulo",
+    to: "/treinamento",
+    image: treinamentoImage,
+    imageAlt: "Dashboard de treinamento com indicadores, cursos e status de alunos",
+    accent: "from-blue-600/20 via-sky-400/10 to-transparent",
   },
 ];
 
@@ -56,7 +77,7 @@ const Products = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
+      className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto"
     >
       {products.map((p) => {
         const content = (
@@ -64,20 +85,27 @@ const Products = () => (
             variants={itemVariants}
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="h-full p-5 rounded-xl bg-card border border-border shadow-card hover:shadow-card-hover transition-shadow flex flex-col"
+            className="group h-full overflow-hidden rounded-2xl bg-card border border-border shadow-card hover:shadow-card-hover transition-shadow flex flex-col"
           >
-            <div className="flex items-center justify-between mb-3">
-              <div className="p-2 rounded-lg bg-primary/10">
-                <p.icon className="h-5 w-5 text-primary" />
-              </div>
-              <span className="text-[10px] font-semibold text-primary bg-primary/10 rounded-full px-2 py-0.5 uppercase tracking-wider">
+            <div className="relative h-40 overflow-hidden bg-muted">
+              <img
+                src={p.image}
+                alt={p.imageAlt}
+                className="h-full w-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-card to-transparent" />
+              <span className="absolute right-5 top-5 text-[10px] font-semibold text-primary bg-white/90 rounded-full px-2.5 py-1 uppercase tracking-wider shadow-sm backdrop-blur">
                 {p.badge}
               </span>
             </div>
-            <h3 className="font-bold text-card-foreground mb-1.5">{p.title}</h3>
-            <p className="text-sm text-muted-foreground mb-4 flex-1">{p.desc}</p>
-            <div className="flex items-center gap-1 text-sm font-semibold text-primary">
-              Saiba mais <ArrowRight className="h-4 w-4" />
+            <div className="p-5 pt-4 flex flex-1 flex-col">
+              <h3 className="font-bold text-card-foreground mb-1.5">{p.title}</h3>
+              <p className="text-sm text-muted-foreground mb-4 flex-1">{p.desc}</p>
+              <div className="flex items-center gap-1 text-sm font-semibold text-primary">
+                Saiba mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </div>
             </div>
           </motion.div>
         );

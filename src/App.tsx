@@ -9,6 +9,7 @@ import Omnichannel from "./pages/Omnichannel.tsx";
 import Portal from "./pages/Portal.tsx";
 import Dashboards from "./pages/Dashboards.tsx";
 import Campanhas from "./pages/Campanhas.tsx";
+import Treinamento from "./pages/Treinamento.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/portal" element={<Portal />} />
           <Route path="/dashboards" element={<Dashboards />} />
           <Route path="/campanhas" element={<Campanhas />} />
+          <Route path="/treinamento" element={<Treinamento />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

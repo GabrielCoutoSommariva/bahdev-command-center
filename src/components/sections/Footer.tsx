@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, Mail, Phone } from "lucide-react";
 import fecomercioSenacLogo from "../../assets/programa-fecomercio-senac.png";
+import foundersClubPrimeLogo from "../../assets/programa-founders-club-prime.svg";
 import iabLogo from "../../assets/programa-iab.png";
+import membroCaldeiraLogo from "../../assets/programa-membro-caldeira.png";
 
 const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
@@ -15,6 +17,16 @@ const memberPrograms = [
     name: "IAB",
     logo: iabLogo,
     className: "w-36",
+  },
+  {
+    name: "Founders Club Prime",
+    logo: foundersClubPrimeLogo,
+    className: "w-72",
+  },
+  {
+    name: "Membro Caldeira",
+    logo: membroCaldeiraLogo,
+    className: "w-40",
   },
 ];
 

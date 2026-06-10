@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   { icon: Search, num: "01", title: "Diagnóstico", desc: "Mapeamos gargalos e rotinas." },
   { icon: Settings, num: "02", title: "Configuração", desc: "Perfis, fluxos e indicadores." },
-  { icon: GraduationCap, num: "03", title: "Treinamento", desc: "Equipe aprende com casos reais." },
+  { icon: GraduationCap, num: "03", title: "Treinamento Capacitação", desc: "Equipe aprende com casos reais." },
   { icon: Rocket, num: "04", title: "Implantação", desc: "Começa pelo que mais dói." },
   { icon: TrendingUp, num: "05", title: "Evolução", desc: "Novos módulos conforme a maturidade." },
 ];

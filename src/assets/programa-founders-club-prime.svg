@@ -1,0 +1,20 @@
+<svg width="960" height="300" viewBox="0 0 960 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Founders Club Prime</title>
+  <desc id="desc">Logo Founders Club Prime em tons de dourado.</desc>
+  <defs>
+    <linearGradient id="gold" x1="40" y1="20" x2="245" y2="275" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C99013"/>
+      <stop offset="0.52" stop-color="#9B6B0E"/>
+      <stop offset="1" stop-color="#59420E"/>
+    </linearGradient>
+    <linearGradient id="textGold" x1="300" y1="50" x2="880" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9D6D13"/>
+      <stop offset="1" stop-color="#2F2516"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="30" width="230" height="240" rx="2" fill="url(#gold)"/>
+  <text x="98" y="228" fill="#F7F7F7" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="700">F</text>
+  <text x="320" y="122" fill="url(#textGold)" font-family="Montserrat, Avenir, Arial, sans-serif" font-size="104" font-weight="300" letter-spacing="-5">Founders</text>
+  <text x="320" y="242" fill="url(#textGold)" font-family="Montserrat, Avenir, Arial, sans-serif" font-size="104" font-weight="300" letter-spacing="-5">Club</text>
+  <text x="630" y="242" fill="url(#textGold)" font-family="Brush Script MT, Segoe Script, cursive" font-size="96" font-style="italic">Prime</text>
+</svg>
