@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SectionWrapper, AnimatedBlock } from "./SectionWrapper";
 import { Button } from "@/components/ui/button";
-import { Shield, Clock, UserCheck, MessageCircle } from "lucide-react";
+import { Shield, Clock, UserCheck, Send } from "lucide-react";
 import { z } from "zod";
 
 const leadSchema = z.object({
@@ -15,7 +15,7 @@ const leadSchema = z.object({
 type LeadData = z.infer<typeof leadSchema>;
 const unitOptions = ["1-10", "11-50", "51-100", "101-500", "500+"];
 
-const WHATSAPP_NUMBER = "5551985901584";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgylwng";
 
 const trustSignals = [
   { icon: Clock, text: "Resposta em até 24h" },
@@ -27,14 +27,19 @@ const LeadCapture = () => {
   const [form, setForm] = useState<LeadData>({ name: "", company: "", role: "", units: "", contact: "" });
   const [errors, setErrors] = useState<Partial<Record<keyof LeadData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (field: keyof LeadData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
+    if (submitError) setSubmitError("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
+
     const result = leadSchema.safeParse(form);
     if (!result.success) {
       const fieldErrors: Partial<Record<keyof LeadData, string>> = {};
@@ -44,23 +49,47 @@ const LeadCapture = () => {
       setErrors(fieldErrors);
       return;
     }
+
     const { name, company, role, units, contact } = result.data;
     const message =
-      `Olá! Quero agendar uma demonstração da Bahdev.\n\n` +
+      `Novo lead pelo site Bahdev\n\n` +
       `*Nome:* ${name}\n` +
       `*Empresa / Rede:* ${company}\n` +
       `*Cargo:* ${role}\n` +
       `*Unidades:* ${units}\n` +
       `*Contato:* ${contact}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setSubmitted(true);
+
+    setSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: "Novo lead pelo site Bahdev",
+          name,
+          company,
+          role,
+          units,
+          contact,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree request failed");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Não foi possível enviar agora. Tente novamente em alguns instantes.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputClass = "w-full px-3 py-2.5 rounded-lg bg-input text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring transition-all";
@@ -72,7 +101,7 @@ const LeadCapture = () => {
           <div className="p-8 rounded-xl bg-card shadow-card">
             <h2 className="text-section text-foreground mb-3">Tudo certo!</h2>
             <p className="text-sm text-muted-foreground">
-              Abrimos o WhatsApp com seus dados. É só enviar a mensagem para concluir o agendamento.
+              Recebemos seus dados. Em breve entraremos em contato para agendar a demonstração.
             </p>
           </div>
         </AnimatedBlock>
@@ -103,21 +132,21 @@ const LeadCapture = () => {
           <form onSubmit={handleSubmit} className="p-5 md:p-6 rounded-xl bg-card shadow-card space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <input className={inputClass} placeholder="Seu nome" value={form.name} onChange={(e) => handleChange("name", e.target.value)} />
+                <input name="name" className={inputClass} placeholder="Seu nome" value={form.name} onChange={(e) => handleChange("name", e.target.value)} />
                 {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
               </div>
               <div>
-                <input className={inputClass} placeholder="Empresa / Rede" value={form.company} onChange={(e) => handleChange("company", e.target.value)} />
+                <input name="company" className={inputClass} placeholder="Empresa / Rede" value={form.company} onChange={(e) => handleChange("company", e.target.value)} />
                 {errors.company && <p className="text-xs text-destructive mt-1">{errors.company}</p>}
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <input className={inputClass} placeholder="Cargo" value={form.role} onChange={(e) => handleChange("role", e.target.value)} />
+                <input name="role" className={inputClass} placeholder="Cargo" value={form.role} onChange={(e) => handleChange("role", e.target.value)} />
                 {errors.role && <p className="text-xs text-destructive mt-1">{errors.role}</p>}
               </div>
               <div>
-                <select className={inputClass} value={form.units} onChange={(e) => handleChange("units", e.target.value)}>
+                <select name="units" className={inputClass} value={form.units} onChange={(e) => handleChange("units", e.target.value)}>
                   <option value="">Unidades</option>
                   {unitOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
                 </select>
@@ -125,15 +154,16 @@ const LeadCapture = () => {
               </div>
             </div>
             <div>
-              <input className={inputClass} placeholder="WhatsApp ou e-mail" value={form.contact} onChange={(e) => handleChange("contact", e.target.value)} />
+              <input name="contact" className={inputClass} placeholder="WhatsApp ou e-mail" value={form.contact} onChange={(e) => handleChange("contact", e.target.value)} />
               {errors.contact && <p className="text-xs text-destructive mt-1">{errors.contact}</p>}
             </div>
-            <Button variant="hero" size="lg" type="submit" className="w-full">
-              Enviar pelo WhatsApp
-              <MessageCircle className="ml-2 h-4 w-4" />
+            {submitError && <p className="text-xs text-destructive text-center">{submitError}</p>}
+            <Button variant="hero" size="lg" type="submit" className="w-full" disabled={submitting}>
+              {submitting ? "Enviando..." : "Solicitar demonstração"}
+              <Send className="ml-2 h-4 w-4" />
             </Button>
             <p className="text-xs text-center text-muted-foreground/60">
-              Seus dados serão enviados direto para nosso WhatsApp.
+              Seus dados serão enviados com segurança para nossa equipe.
             </p>
           </form>
         </AnimatedBlock>
