@@ -4,7 +4,6 @@ import fecomercioSenacLogo from "../../assets/programa-fecomercio-senac.png";
 import foundersClubPrimeLogo from "../../assets/programa-founders-club-prime.svg";
 import iabLogo from "../../assets/programa-iab.png";
 import membroCaldeiraLogo from "../../assets/programa-membro-caldeira.png";
-import startupLabLogo from "../../assets/startuplab-nom.png";
 
 const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Olá, quero entender como a Bahdev pode funcionar na minha operação.")}`;
 
@@ -23,11 +22,6 @@ const programGroups = [
         logo: iabLogo,
         className: "w-36",
         imageClassName: "scale-90",
-      },
-      {
-        name: "Startup Lab",
-        logo: startupLabLogo,
-        className: "w-44",
       },
     ],
   },

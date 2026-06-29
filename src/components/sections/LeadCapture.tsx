@@ -15,7 +15,7 @@ const leadSchema = z.object({
 type LeadData = z.infer<typeof leadSchema>;
 const unitOptions = ["1-10", "11-50", "51-100", "101-500", "500+"];
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgylwng";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xykqpdlz";
 
 const trustSignals = [
   { icon: Clock, text: "Resposta em até 24h" },
