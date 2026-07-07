@@ -100,7 +100,7 @@ const LeadCapture = () => {
 
   if (submitted) {
     return (
-      <SectionWrapper id="demo">
+      <SectionWrapper id="demo" className="scroll-mt-24">
         <AnimatedBlock className="max-w-md mx-auto text-center">
           <div className="p-8 rounded-xl bg-card shadow-card">
             <h2 className="text-section text-foreground mb-3">Tudo certo!</h2>
@@ -114,7 +114,7 @@ const LeadCapture = () => {
   }
 
   return (
-    <SectionWrapper id="demo">
+    <SectionWrapper id="demo" className="scroll-mt-24">
       <div className="grid lg:grid-cols-2 gap-10 items-start max-w-4xl mx-auto">
         <AnimatedBlock>
           <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Demonstração</p>

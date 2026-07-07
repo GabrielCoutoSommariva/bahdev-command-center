@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { type MouseEvent, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,6 +16,28 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleDemoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    setOpen(false);
+
+    const scrollToDemo = () => {
+      document.getElementById("demo")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    if (location.pathname !== "/") {
+      navigate("/#demo");
+      window.setTimeout(scrollToDemo, 100);
+      return;
+    }
+
+    if (location.hash !== "#demo") {
+      navigate("/#demo");
+    }
+    window.setTimeout(scrollToDemo, 0);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border">
@@ -45,7 +67,7 @@ const Navbar = () => {
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</a>
           </Button>
           <Button variant="hero" size="lg" asChild>
-            <a href="/#demo">Agendar demonstração</a>
+            <a href="/#demo" onClick={handleDemoClick}>Agendar demonstração</a>
           </Button>
         </div>
 
@@ -75,7 +97,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="lg" className="mt-2" asChild>
-            <a href="/#demo">Agendar demonstração</a>
+            <a href="/#demo" onClick={handleDemoClick}>Agendar demonstração</a>
           </Button>
         </div>
       </div>

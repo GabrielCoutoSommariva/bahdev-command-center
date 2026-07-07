@@ -30,8 +30,8 @@ const Index = () => (
       <Benefits />
       <ForWho />
       <CaseStudy />
-      <Plans />
       <LeadCapture />
+      <Plans />
       <FAQ />
       <MissionVisionValues />
     </main>
