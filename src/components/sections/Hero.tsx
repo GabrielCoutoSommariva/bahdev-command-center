@@ -37,7 +37,7 @@ const Hero = () => (
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button variant="hero" size="xl" asChild>
               <a href="#demo">
-                Solicitar demonstração
+                Fale conosco
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>

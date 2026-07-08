@@ -8,7 +8,6 @@ import Benefits from "@/components/sections/Benefits";
 import CaseStudy from "@/components/sections/CaseStudy";
 import RegionMap from "@/components/sections/RegionMap";
 import ForWho from "@/components/sections/ForWho";
-import Plans from "@/components/sections/Plans";
 import MissionVisionValues from "@/components/sections/MissionVisionValues";
 import LeadCapture from "@/components/sections/LeadCapture";
 import FAQ from "@/components/sections/FAQ";
@@ -31,7 +30,6 @@ const Index = () => (
       <ForWho />
       <CaseStudy />
       <LeadCapture />
-      <Plans />
       <FAQ />
       <MissionVisionValues />
     </main>

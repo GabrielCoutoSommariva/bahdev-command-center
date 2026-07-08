@@ -33,7 +33,7 @@ const Omnichannel = () => (
       "Integração com CRM, ERPs e BI",
     ]}
     ctaTitle="Pronto para unificar seu atendimento?"
-    ctaDesc="Agende uma demonstração e veja a plataforma rodando com dados da sua operação."
+    ctaDesc="Fale com a Bahdev e conte como sua equipe atende hoje."
   />
 );
 

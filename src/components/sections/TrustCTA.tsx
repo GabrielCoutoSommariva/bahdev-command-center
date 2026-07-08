@@ -36,7 +36,7 @@ const TrustCTA = ({ headline, subtext, variant = "light" }: TrustCTAProps) => {
               asChild
             >
               <a href="#demo">
-                Solicitar demonstração
+                Fale conosco
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

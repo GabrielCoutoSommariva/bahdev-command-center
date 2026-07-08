@@ -10,7 +10,6 @@ const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Ol�
 const navLinks = [
   { label: "Produtos", href: "/#produtos" },
   { label: "Como funciona", href: "/#como-funciona" },
-  { label: "Planos", href: "/#planos" },
   { label: "FAQ", href: "/#faq" },
 ];
 
@@ -64,10 +63,10 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Fale conosco</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </Button>
           <Button variant="hero" size="lg" asChild>
-            <a href="/#demo" onClick={handleDemoClick}>Agendar demonstração</a>
+            <a href="/#demo" onClick={handleDemoClick}>Fale conosco</a>
           </Button>
         </div>
 
@@ -97,7 +96,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="lg" className="mt-2" asChild>
-            <a href="/#demo" onClick={handleDemoClick}>Agendar demonstração</a>
+            <a href="/#demo" onClick={handleDemoClick}>Fale conosco</a>
           </Button>
         </div>
       </div>

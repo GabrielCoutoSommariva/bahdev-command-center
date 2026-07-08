@@ -128,7 +128,7 @@ const CaseStudy = () => {
         <AnimatedBlock className="text-center mt-8">
           <Button variant="hero" size="lg" className="text-white" asChild>
             <a href="#demo">
-              Quero ver no meu cenário
+              Fale conosco
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>

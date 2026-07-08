@@ -36,7 +36,7 @@ const MobileStickyBar = () => {
     >
       <Button variant="hero" size="lg" className="w-full" asChild>
         <a href="/#demo" onClick={handleDemoClick}>
-          Agendar demonstração
+          Fale conosco
           <ArrowRight className="ml-2 h-4 w-4" />
         </a>
       </Button>

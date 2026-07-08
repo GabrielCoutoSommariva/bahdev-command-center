@@ -208,7 +208,7 @@ const Treinamento = () => (
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Button asChild variant="hero" size="lg">
-                <a href="/#demo">Agendar demonstração</a>
+                <a href="/#demo">Fale conosco</a>
               </Button>
               <Button asChild variant="hero-outline" size="lg">
                 <a href="#visao-produto">Ver visão do painel</a>
@@ -337,9 +337,9 @@ const Treinamento = () => (
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15">
                 <Medal className="h-6 w-6" />
               </div>
-              <h2 className="text-section">Quer ver o Treinamento Capacitação no seu cenário?</h2>
+              <h2 className="text-section">Quer falar sobre capacitação?</h2>
               <p className="mt-4 text-body text-white/85">
-                Em uma demonstração, mostramos como estruturar cursos, trilhas, equipes, certificados e dashboards com a realidade da sua operação.
+                Conte sua necessidade e mostramos o melhor caminho para estruturar cursos, trilhas, equipes, certificados e dashboards.
               </p>
             </div>
             <div className="rounded-2xl bg-white/12 p-5">
@@ -349,7 +349,7 @@ const Treinamento = () => (
               <p className="text-sm leading-6 text-white/90">Ideal para redes, associações e operações que precisam treinar times distribuídos com controle, indicadores e experiência simples.</p>
               <Button asChild variant="hero-light" size="lg" className="mt-6 w-full !text-primary hover:!text-primary">
                 <a href="/#demo" className="!text-primary hover:!text-primary">
-                  Solicitar demonstração
+                  Fale conosco
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>

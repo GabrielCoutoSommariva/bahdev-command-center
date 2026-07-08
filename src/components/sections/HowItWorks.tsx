@@ -64,7 +64,7 @@ const HowItWorks = () => (
     <AnimatedBlock className="text-center">
       <Button variant="hero" size="lg" asChild>
         <a href="#demo">
-          Quero um plano de implantação
+          Fale conosco
           <ArrowRight className="ml-2 h-4 w-4" />
         </a>
       </Button>

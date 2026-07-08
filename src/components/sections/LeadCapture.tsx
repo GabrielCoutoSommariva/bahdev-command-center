@@ -6,15 +6,12 @@ import { z } from "zod";
 
 const leadSchema = z.object({
   name: z.string().trim().min(1, "Obrigatório").max(100),
-  company: z.string().trim().min(1, "Obrigatório").max(200),
-  role: z.string().trim().min(1, "Obrigatório").max(100),
-  units: z.string().trim().min(1, "Selecione"),
+  company: z.string().trim().max(200),
   contact: z.string().trim().min(1, "Obrigatório").max(200),
-  message: z.string().trim().max(1000, "Máximo de 1000 caracteres"),
+  message: z.string().trim().min(1, "Obrigatório").max(1000, "Máximo de 1000 caracteres"),
 });
 
 type LeadData = z.infer<typeof leadSchema>;
-const unitOptions = ["1-10", "11-50", "51-100", "101-500", "500+"];
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xykqpdlz";
 
@@ -25,7 +22,7 @@ const trustSignals = [
 ];
 
 const LeadCapture = () => {
-  const [form, setForm] = useState<LeadData>({ name: "", company: "", role: "", units: "", contact: "", message: "" });
+  const [form, setForm] = useState<LeadData>({ name: "", company: "", contact: "", message: "" });
   const [errors, setErrors] = useState<Partial<Record<keyof LeadData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -51,15 +48,13 @@ const LeadCapture = () => {
       return;
     }
 
-    const { name, company, role, units, contact, message } = result.data;
+    const { name, company, contact, message } = result.data;
     const formattedMessage =
-      `Novo lead pelo site Bahdev\n\n` +
+      `Novo contato pelo site Bahdev\n\n` +
       `Nome: ${name}\n` +
-      `Empresa / Rede: ${company}\n` +
-      `Cargo: ${role}\n` +
-      `Unidades: ${units}\n` +
+      `Empresa: ${company || "Não informado"}\n` +
       `Contato: ${contact}\n` +
-      `Mensagem: ${message || "Não informado"}`;
+      `Mensagem: ${message}`;
 
     setSubmitting(true);
     setSubmitError("");
@@ -72,13 +67,10 @@ const LeadCapture = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: "Novo lead pelo site Bahdev",
+          _subject: "Novo contato pelo site Bahdev",
           name,
           company,
-          role,
-          units,
           contact,
-          question: message,
           message: formattedMessage,
         }),
       });
@@ -100,12 +92,12 @@ const LeadCapture = () => {
 
   if (submitted) {
     return (
-      <SectionWrapper id="demo" className="scroll-mt-24">
+      <SectionWrapper>
         <AnimatedBlock className="max-w-md mx-auto text-center">
           <div className="p-8 rounded-xl bg-card shadow-card">
             <h2 className="text-section text-foreground mb-3">Tudo certo!</h2>
             <p className="text-sm text-muted-foreground">
-              Recebemos seus dados. Em breve entraremos em contato para agendar a demonstração.
+              Recebemos sua mensagem. Em breve nossa equipe entra em contato.
             </p>
           </div>
         </AnimatedBlock>
@@ -114,13 +106,13 @@ const LeadCapture = () => {
   }
 
   return (
-    <SectionWrapper id="demo" className="scroll-mt-24">
+    <SectionWrapper>
       <div className="grid lg:grid-cols-2 gap-10 items-start max-w-4xl mx-auto">
         <AnimatedBlock>
-          <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Demonstração</p>
-          <h2 className="text-section text-foreground mb-4">Veja a Bahdev no seu cenário</h2>
+          <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Contato</p>
+          <h2 className="text-section text-foreground mb-4">Fale com a Bahdev</h2>
           <p className="text-body text-muted-foreground max-w-[45ch] mb-5">
-            Em poucos minutos, mostramos o fluxo ideal para sua rede.
+            Envie sua dúvida, ideia ou necessidade. Nossa equipe retorna com o melhor caminho.
           </p>
           <div className="flex flex-wrap gap-4">
             {trustSignals.map((s) => (
@@ -133,29 +125,16 @@ const LeadCapture = () => {
         </AnimatedBlock>
 
         <AnimatedBlock delay={0.1}>
-          <form onSubmit={handleSubmit} className="p-5 md:p-6 rounded-xl bg-card shadow-card space-y-4">
+          <form id="demo" onSubmit={handleSubmit} className="scroll-mt-32 p-5 md:p-6 rounded-xl bg-card shadow-card space-y-4">
             <div>
               <label className={labelClass} htmlFor="lead-name">Nome</label>
               <input id="lead-name" name="name" className={inputClass} placeholder="Seu nome" value={form.name} onChange={(e) => handleChange("name", e.target.value)} />
               {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
             </div>
             <div>
-              <label className={labelClass} htmlFor="lead-company">Empresa / Rede</label>
-              <input id="lead-company" name="company" className={inputClass} placeholder="Nome da empresa ou rede" value={form.company} onChange={(e) => handleChange("company", e.target.value)} />
+              <label className={labelClass} htmlFor="lead-company">Empresa</label>
+              <input id="lead-company" name="company" className={inputClass} placeholder="Nome da empresa, se houver" value={form.company} onChange={(e) => handleChange("company", e.target.value)} />
               {errors.company && <p className="text-xs text-destructive mt-1">{errors.company}</p>}
-            </div>
-            <div>
-              <label className={labelClass} htmlFor="lead-role">Cargo</label>
-              <input id="lead-role" name="role" className={inputClass} placeholder="Seu cargo" value={form.role} onChange={(e) => handleChange("role", e.target.value)} />
-              {errors.role && <p className="text-xs text-destructive mt-1">{errors.role}</p>}
-            </div>
-            <div>
-              <label className={labelClass} htmlFor="lead-units">Quantidade de unidades</label>
-              <select id="lead-units" name="units" className={inputClass} value={form.units} onChange={(e) => handleChange("units", e.target.value)}>
-                <option value="">Selecione uma faixa</option>
-                {unitOptions.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
-              </select>
-              {errors.units && <p className="text-xs text-destructive mt-1">{errors.units}</p>}
             </div>
             <div>
               <label className={labelClass} htmlFor="lead-contact">Contato</label>
@@ -167,8 +146,8 @@ const LeadCapture = () => {
               <textarea
                 id="lead-message"
                 name="message"
-                className={`${inputClass} min-h-24 resize-none`}
-                placeholder="Deixe uma dúvida, necessidade ou contexto da sua operação"
+                className={`${inputClass} min-h-28 resize-none`}
+                placeholder="Escreva sua mensagem"
                 value={form.message}
                 onChange={(e) => handleChange("message", e.target.value)}
               />
@@ -176,7 +155,7 @@ const LeadCapture = () => {
             </div>
             {submitError && <p className="text-xs text-destructive text-center">{submitError}</p>}
             <Button variant="hero" size="lg" type="submit" className="w-full" disabled={submitting}>
-              {submitting ? "Enviando..." : "Solicitar demonstração"}
+              {submitting ? "Enviando..." : "Enviar mensagem"}
               <Send className="ml-2 h-4 w-4" />
             </Button>
             <p className="text-xs text-center text-muted-foreground/60">

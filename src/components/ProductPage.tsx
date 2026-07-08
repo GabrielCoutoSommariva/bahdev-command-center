@@ -32,7 +32,7 @@ const ProductPage = ({
   benefits,
   highlights,
   ctaTitle = "Pronto para começar?",
-  ctaDesc = "Agende uma demonstração e veja o módulo rodando com dados da sua operação.",
+  ctaDesc = "Fale com a Bahdev e conte o que sua operação precisa.",
 }: ProductPageProps) => (
   <>
     <Navbar />
@@ -59,7 +59,7 @@ const ProductPage = ({
           <p className="text-body-lg text-muted-foreground mb-6">{description}</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild variant="hero" size="lg">
-              <a href="/#demo">Agendar demonstração</a>
+              <a href="/#demo">Fale conosco</a>
             </Button>
             <Button asChild variant="hero-outline" size="lg">
               <Link to="/#produtos">Ver outros produtos</Link>
@@ -150,7 +150,7 @@ const ProductPage = ({
           <p className="text-body text-white/85 mb-6 max-w-xl mx-auto">{ctaDesc}</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild variant="hero-light" size="lg" className="!text-primary hover:!text-primary">
-              <a href="/#demo" className="!text-primary hover:!text-primary">Agendar demonstração</a>
+              <a href="/#demo" className="!text-primary hover:!text-primary">Fale conosco</a>
             </Button>
             <Button asChild variant="cta-outline-white" size="lg" className="!text-white hover:!text-primary">
               <Link to="/#produtos" className="!text-white hover:!text-primary">Ver outros produtos</Link>

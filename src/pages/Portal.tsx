@@ -33,7 +33,7 @@ const Portal = () => (
       "Materiais sempre atualizados e disponíveis",
     ]}
     ctaTitle="Pronto para organizar sua rede?"
-    ctaDesc="Agende uma demo e veja o portal funcionando com a estrutura da sua operação."
+    ctaDesc="Fale com a Bahdev e conte o que sua operação precisa organizar."
   />
 );
 
