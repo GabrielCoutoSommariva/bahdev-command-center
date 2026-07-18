@@ -5,8 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "generate:blog": "node scripts/generate-blog-seo.mjs",
+    "prebuild": "npm run generate:blog",
     "build": "vite build",
+    "postbuild": "node scripts/generate-blog-pages.mjs",
+    "prebuild:dev": "npm run generate:blog",
     "build:dev": "vite build --mode development",
+    "postbuild:dev": "node scripts/generate-blog-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",

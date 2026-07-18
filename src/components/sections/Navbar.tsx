@@ -10,6 +10,7 @@ const WHATSAPP_URL = `https://wa.me/5551985901584?text=${encodeURIComponent("Ol√
 const navLinks = [
   { label: "Produtos", href: "/#produtos" },
   { label: "Como funciona", href: "/#como-funciona" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ];
 
