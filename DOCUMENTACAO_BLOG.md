@@ -174,6 +174,24 @@ O editor grava os seguintes formatos:
 
 Cada página estática recebe canonical, Open Graph, Twitter Card, conteúdo inicial e dados estruturados. O domínio canônico é `https://www.bahdev.com.br`.
 
+## Autorização do administrador
+
+O usuário administrador deve ser criado em `Authentication > Users` no painel do Supabase. A senha não deve ser versionada no Git.
+
+Conta autorizada esperada:
+
+```txt
+gabriel.couto@bahdev.com.br
+```
+
+Depois de criar o usuário no Auth, execute no SQL Editor:
+
+```txt
+supabase/admin/authorize_blog_admin.sql
+```
+
+Esse arquivo insere o UUID do usuário em `blog_admins` a partir do e-mail e confirma a autorização.
+
 ## Validação
 
 ```bash
