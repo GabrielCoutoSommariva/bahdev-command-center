@@ -1,6 +1,6 @@
 import { ArrowRight, Clock3 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { type BlogPost, formatBlogDate, getBlogCover } from "@/lib/blog";
+import { type BlogPost, formatBlogDate, getPostCover } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 
 type BlogCardProps = {
@@ -26,7 +26,7 @@ const BlogCard = ({ post, featured = false, className }: BlogCardProps) => (
         )}
       >
         <img
-          src={getBlogCover(post.cover)}
+          src={getPostCover(post)}
           alt={post.coverAlt}
           className="h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.035]"
           loading={featured ? "eager" : "lazy"}

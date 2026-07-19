@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "@/components/sections/SectionWrapper";
 import { ArrowLeft, CheckCircle2, type LucideIcon } from "lucide-react";
@@ -33,8 +34,12 @@ const ProductPage = ({
   highlights,
   ctaTitle = "Pronto para começar?",
   ctaDesc = "Fale com a Bahdev e conte o que sua operação precisa.",
-}: ProductPageProps) => (
-  <>
+}: ProductPageProps) => {
+  const { pathname } = useLocation();
+
+  return (
+    <>
+      <SEO title={`${title} | Bahdev`} description={description} path={pathname} />
     <Navbar />
     <main className="pt-16">
       {/* Hero */}
@@ -161,7 +166,8 @@ const ProductPage = ({
     </main>
     <Footer />
     <WhatsAppButton />
-  </>
-);
+    </>
+  );
+};
 
 export default ProductPage;

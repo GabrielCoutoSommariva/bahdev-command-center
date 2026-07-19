@@ -25,6 +25,7 @@ export type BlogPost = {
   readTime: string;
   featured: boolean;
   cover: BlogCoverKey;
+  coverUrl?: string;
   coverAlt: string;
   seoTitle: string;
   seoDescription: string;
@@ -55,6 +56,8 @@ export const getBlogPost = (slug?: string) => blogPosts.find((post) => post.slug
 
 export const getBlogCover = (cover: BlogCoverKey) => coverAssets[cover];
 
+export const getPostCover = (post: BlogPost) => post.coverUrl || getBlogCover(post.cover);
+
 export const formatBlogDate = (date: string) =>
   new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
@@ -63,8 +66,8 @@ export const formatBlogDate = (date: string) =>
     timeZone: "UTC",
   }).format(new Date(`${date}T00:00:00Z`));
 
-export const getRelatedPosts = (post: BlogPost, limit = 3) =>
-  blogPosts
+export const getRelatedPosts = (post: BlogPost, limit = 3, source = blogPosts) =>
+  source
     .filter((candidate) => candidate.slug !== post.slug)
     .map((candidate) => ({
       candidate,

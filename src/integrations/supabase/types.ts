@@ -14,13 +14,106 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_admins: {
+        Row: {
+          user_id: string
+          created_at: string
+        }
+        Insert: {
+          user_id: string
+          created_at?: string
+        }
+        Update: {
+          user_id?: string
+          created_at?: string
+        }
+        Relationships: []
+      }
+      blog_posts: {
+        Row: {
+          id: string
+          slug: string
+          title: string
+          excerpt: string
+          category: string
+          tags: string[]
+          author: string
+          read_time: string
+          featured: boolean
+          cover_key: string | null
+          cover_url: string | null
+          cover_alt: string
+          seo_title: string
+          seo_description: string
+          content: Json
+          status: string
+          published_at: string | null
+          created_by: string | null
+          updated_by: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          title: string
+          excerpt: string
+          category: string
+          tags?: string[]
+          author?: string
+          read_time?: string
+          featured?: boolean
+          cover_key?: string | null
+          cover_url?: string | null
+          cover_alt: string
+          seo_title: string
+          seo_description: string
+          content?: Json
+          status?: string
+          published_at?: string | null
+          created_by?: string | null
+          updated_by?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          title?: string
+          excerpt?: string
+          category?: string
+          tags?: string[]
+          author?: string
+          read_time?: string
+          featured?: boolean
+          cover_key?: string | null
+          cover_url?: string | null
+          cover_alt?: string
+          seo_title?: string
+          seo_description?: string
+          content?: Json
+          status?: string
+          published_at?: string | null
+          created_by?: string | null
+          updated_by?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_blog_admin_access: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
+      is_blog_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never

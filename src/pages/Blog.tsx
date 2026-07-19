@@ -6,7 +6,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
 import BlogCard from "@/components/blog/BlogCard";
 import BlogCTA from "@/components/blog/BlogCTA";
-import { blogCategories, blogPosts, featuredPost } from "@/lib/blog";
+import { blogPosts as fallbackBlogPosts, featuredPost as fallbackFeaturedPost } from "@/lib/blog";
+import { useBlogPosts } from "@/hooks/use-blog-posts";
 import { cn } from "@/lib/utils";
 
 const normalize = (value: string) =>
@@ -18,6 +19,15 @@ const normalize = (value: string) =>
 const Blog = () => {
   const [category, setCategory] = useState("Todos");
   const [search, setSearch] = useState("");
+  const postsQuery = useBlogPosts();
+  const blogPosts = postsQuery.data ?? fallbackBlogPosts;
+  const featuredPost = blogPosts.find((post) => post.featured) ?? blogPosts[0] ?? fallbackFeaturedPost;
+  const blogCategories = [
+    "Todos",
+    ...Array.from(new Set(blogPosts.map((post) => post.category))).sort((a, b) =>
+      a.localeCompare(b, "pt-BR"),
+    ),
+  ];
 
   const isFiltering = category !== "Todos" || search.trim().length > 0;
 
@@ -33,7 +43,7 @@ const Blog = () => {
 
       return matchesCategory && matchesSearch;
     });
-  }, [category, search]);
+  }, [blogPosts, category, search]);
 
   const gridPosts = isFiltering
     ? visiblePosts

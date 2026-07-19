@@ -1,12 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { loadPublishedBlogPosts } from "./load-blog-posts.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = path.join(root, "dist");
 const assetsDir = path.join(distDir, "assets");
-const postsPath = path.join(root, "src", "content", "blog-posts.json");
-const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
+const posts = await loadPublishedBlogPosts();
 const baseHtml = fs.readFileSync(path.join(distDir, "index.html"), "utf8");
 
 const siteUrl = "https://www.bahdev.com.br";
@@ -167,7 +167,7 @@ fs.writeFileSync(
 
 for (const post of posts) {
   const target = `/blog/${post.slug}`;
-  const image = getCoverUrl(post.cover);
+  const image = post.coverUrl || getCoverUrl(post.cover);
   const articleDir = path.join(blogDir, post.slug);
   fs.mkdirSync(articleDir, { recursive: true });
 

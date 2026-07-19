@@ -1,11 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { loadPublishedBlogPosts } from "./load-blog-posts.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = path.join(root, "public");
-const postsPath = path.join(root, "src", "content", "blog-posts.json");
-const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
+const posts = await loadPublishedBlogPosts();
 const siteUrl = "https://www.bahdev.com.br";
 
 const staticRoutes = [

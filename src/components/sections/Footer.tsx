@@ -79,17 +79,18 @@ const Footer = () => (
         <div>
           <p className="text-xs font-semibold mb-2 opacity-80">Plataforma</p>
           <ul className="space-y-1.5 text-xs opacity-60">
-            <li><a href="#solucao" className="hover:opacity-100">Solução</a></li>
-            <li><a href="#como-funciona" className="hover:opacity-100">Como funciona</a></li>
-            <li><a href="#beneficios" className="hover:opacity-100">Benefícios</a></li>
+            <li><a href="/#solucao" className="hover:opacity-100">Solução</a></li>
+            <li><a href="/#como-funciona" className="hover:opacity-100">Como funciona</a></li>
+            <li><a href="/#beneficios" className="hover:opacity-100">Benefícios</a></li>
           </ul>
         </div>
         <div>
           <p className="text-xs font-semibold mb-2 opacity-80">Empresa</p>
           <ul className="space-y-1.5 text-xs opacity-60">
-            <li><a href="#para-quem" className="hover:opacity-100">Para quem</a></li>
-            <li><a href="#case" className="hover:opacity-100">Cases</a></li>
-            <li><a href="#faq" className="hover:opacity-100">FAQ</a></li>
+            <li><a href="/#para-quem" className="hover:opacity-100">Para quem</a></li>
+            <li><a href="/#case" className="hover:opacity-100">Cases</a></li>
+            <li><a href="/blog" className="hover:opacity-100">Blog</a></li>
+            <li><a href="/#faq" className="hover:opacity-100">FAQ</a></li>
           </ul>
         </div>
         <div>

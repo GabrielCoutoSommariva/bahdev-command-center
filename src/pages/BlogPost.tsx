@@ -20,17 +20,27 @@ import BlogCTA from "@/components/blog/BlogCTA";
 import { Button } from "@/components/ui/button";
 import {
   formatBlogDate,
-  getBlogCover,
-  getBlogPost,
   getRelatedPosts,
+  getPostCover,
 } from "@/lib/blog";
+import { useBlogPosts } from "@/hooks/use-blog-posts";
 
 const SITE_URL = "https://www.bahdev.com.br";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = getBlogPost(slug);
+  const postsQuery = useBlogPosts();
+  const posts = postsQuery.data ?? [];
+  const post = posts.find((candidate) => candidate.slug === slug);
   const [copied, setCopied] = useState(false);
+
+  if (!post && postsQuery.isFetching) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background text-sm font-semibold text-muted-foreground">
+        Carregando matéria...
+      </div>
+    );
+  }
 
   if (!post) {
     return (
@@ -60,7 +70,7 @@ const BlogPostPage = () => {
 
   const articlePath = `/blog/${post.slug}`;
   const articleUrl = `${SITE_URL}${articlePath}`;
-  const relatedPosts = getRelatedPosts(post);
+  const relatedPosts = getRelatedPosts(post, 3, posts);
   const headings = post.blocks.filter(
     (block): block is Extract<(typeof post.blocks)[number], { type: "heading" }> =>
       block.type === "heading",
@@ -82,7 +92,7 @@ const BlogPostPage = () => {
         title={post.seoTitle}
         description={post.seoDescription}
         path={articlePath}
-        image={getBlogCover(post.cover)}
+        image={getPostCover(post)}
         imageAlt={post.coverAlt}
         type="article"
         publishedAt={post.publishedAt}
@@ -142,7 +152,7 @@ const BlogPostPage = () => {
             <figure className="relative -mt-1 overflow-hidden rounded-2xl border border-border bg-muted shadow-product md:rounded-3xl">
               <div className="aspect-[16/8] min-h-64 w-full">
                 <img
-                  src={getBlogCover(post.cover)}
+                  src={getPostCover(post)}
                   alt={post.coverAlt}
                   className="h-full w-full object-cover object-left-top"
                 />

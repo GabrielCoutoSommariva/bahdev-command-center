@@ -219,158 +219,197 @@
       },
       {
         "type": "callout",
-        "title": "O portal precisa reduzir esforço",
-        "text": "Se a unidade precisa perguntar onde está a informação, o processo ainda não está claro o suficiente."
+        "title": "A busca precisa ser mais fácil do que perguntar no grupo",
+        "text": "Se encontrar uma informação no portal for trabalhoso, as pessoas voltarão aos canais antigos. Organização, linguagem simples e navegação por contexto são decisivas para a adoção."
       },
       {
         "type": "heading",
-        "id": "ganho-para-a-central",
-        "text": "O ganho para a central"
+        "id": "implantacao",
+        "text": "Implantação começa pela rotina, não pela tecnologia"
       },
       {
         "type": "paragraph",
-        "text": "Com um portal, a central acompanha adesão, prazos, leituras e pendências sem depender de cobranças manuais. Isso muda o papel da gestão: em vez de procurar informação, ela passa a agir sobre dados organizados."
+        "text": "Antes de publicar o portal, defina quem mantém cada área, quais conteúdos têm validade e qual canal deixará de ser usado para aquele processo. Uma regra simples ajuda: toda informação oficial deve existir no portal, mesmo que o aviso também seja enviado por outro canal."
       },
       {
-        "type": "list",
-        "items": [
-          "Menos retrabalho em comunicação recorrente.",
-          "Mais segurança sobre versões e prazos.",
-          "Histórico disponível para auditoria e transição de equipes.",
-          "Visão por unidade, região ou perfil."
-        ]
+        "type": "quote",
+        "text": "O portal ganha valor quando a rede confia que a versão correta e o histórico completo estarão sempre ali."
+      },
+      {
+        "type": "paragraph",
+        "text": "Com essa base, novas funções podem ser adicionadas conforme o uso real: relatórios, integrações, área financeira, treinamentos ou fluxos específicos. O importante é começar resolvendo os pontos de atrito mais frequentes."
       }
     ]
   },
   {
     "slug": "treinamento-corporativo-equipes-multiplas-unidades",
-    "title": "Treinamento corporativo para equipes em múltiplas unidades: o que muda quando tudo é mensurável",
-    "excerpt": "Capacitar equipes distribuídas exige clareza, acompanhamento e padronização. Veja como transformar treinamento em processo de gestão.",
+    "title": "Treinamento corporativo: como capacitar equipes em múltiplas unidades",
+    "excerpt": "Trilhas, acompanhamento e conteúdos por perfil ajudam a transformar treinamentos pontuais em um processo contínuo de desenvolvimento.",
     "category": "Treinamento",
-    "tags": ["treinamento", "capacitação", "equipes", "certificados"],
+    "tags": ["treinamento", "capacitação", "trilhas", "equipes"],
     "author": "Equipe Bahdev",
-    "publishedAt": "2026-07-06",
-    "updatedAt": "2026-07-06",
+    "publishedAt": "2026-07-07",
+    "updatedAt": "2026-07-07",
     "readTime": "6 min de leitura",
     "featured": false,
     "cover": "treinamento",
-    "coverAlt": "Dashboard de treinamento e capacitação da Bahdev",
-    "seoTitle": "Treinamento corporativo para múltiplas unidades | Bahdev",
-    "seoDescription": "Entenda como organizar capacitação, trilhas, certificados e indicadores para equipes distribuídas.",
+    "coverAlt": "Painel de treinamento e capacitação da Bahdev",
+    "seoTitle": "Treinamento para equipes em múltiplas unidades | Bahdev",
+    "seoDescription": "Veja como estruturar trilhas, conteúdos e acompanhamento de treinamento para equipes distribuídas em várias unidades.",
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Treinar equipes em várias unidades é diferente de publicar conteúdos soltos. A gestão precisa saber quem recebeu a orientação, quem concluiu, quais temas geram dúvida e onde existem lacunas. Sem isso, o treinamento vira uma ação pontual em vez de um processo contínuo."
+        "text": "Capacitar uma equipe distribuída exige mais do que disponibilizar vídeos ou apresentações. Pessoas entram em momentos diferentes, funções pedem conhecimentos distintos e cada unidade tem sua própria rotina. Sem estrutura, a central não sabe quem recebeu o conteúdo, concluiu a trilha ou ainda precisa de apoio."
       },
       {
         "type": "paragraph",
-        "text": "Uma estrutura mensurável organiza trilhas, módulos, aulas, progresso e certificados. O colaborador entende o que precisa fazer; a liderança acompanha evolução; e a administração central identifica onde agir."
+        "text": "Uma plataforma de treinamento transforma conteúdos soltos em jornadas organizadas. Cursos, trilhas e avaliações passam a ser distribuídos por perfil, equipe ou unidade, enquanto gestores acompanham o avanço sem depender de controles manuais."
       },
       {
         "type": "heading",
-        "id": "do-conteudo-ao-processo",
-        "text": "Do conteúdo ao processo"
+        "id": "partir-das-competencias",
+        "text": "Parta das competências, não da lista de conteúdos"
+      },
+      {
+        "type": "paragraph",
+        "text": "Antes de criar cursos, defina o que cada pessoa precisa saber ou conseguir executar. Esse objetivo orienta o formato da aula, a ordem dos módulos e a forma de verificar o aprendizado. Também evita trilhas longas que acumulam informação sem conexão com a rotina."
       },
       {
         "type": "list",
         "items": [
-          "Definir trilhas por perfil ou função.",
-          "Organizar aulas em módulos simples.",
-          "Liberar etapas conforme conclusão.",
-          "Emitir certificados com regra clara.",
-          "Acompanhar progresso por equipe, unidade ou região."
+          "Integração de novos colaboradores.",
+          "Procedimentos operacionais e padrões da rede.",
+          "Atualizações de produto, serviço ou regulamentação.",
+          "Desenvolvimento de liderança e gestão.",
+          "Reciclagens periódicas para temas críticos."
         ]
       },
       {
+        "type": "heading",
+        "id": "conteudo-aplicavel",
+        "text": "Conteúdo curto e aplicável aumenta a continuidade"
+      },
+      {
+        "type": "paragraph",
+        "text": "Aulas menores, exemplos próximos da realidade e materiais de consulta rápida facilitam o uso. Nem todo aprendizado precisa de uma prova formal; checklists, atividades práticas e validações do gestor podem ser mais adequados dependendo do objetivo."
+      },
+      {
         "type": "callout",
-        "title": "Treinamento bom reduz improviso",
-        "text": "Quando a equipe sabe onde aprender e a gestão sabe quem concluiu, o padrão operacional deixa de depender apenas de repasses informais."
+        "title": "Progresso não é o mesmo que aprendizado",
+        "text": "A taxa de conclusão mostra adesão. Para avaliar aprendizado, combine esse dado com avaliações, aplicação prática e indicadores da própria operação."
       },
       {
         "type": "heading",
-        "id": "indicadores-importantes",
-        "text": "Indicadores que ajudam a gestão"
+        "id": "governanca",
+        "text": "Defina quem cria, publica e acompanha"
       },
       {
         "type": "paragraph",
-        "text": "Os melhores indicadores são aqueles que mostram aderência e risco. Taxa de conclusão, módulos pendentes, tempo médio de avanço e desempenho por grupo ajudam a entender se a capacitação está chegando na ponta."
-      },
-      {
-        "type": "quote",
-        "text": "Capacitação deixa de ser apenas conteúdo quando passa a orientar decisões da gestão."
+        "text": "Em operações com várias empresas ou unidades, permissões e responsabilidades precisam ser explícitas. A administração central pode manter conteúdos globais, enquanto gestores locais acompanham suas equipes e, quando permitido, publicam materiais específicos para seu contexto."
       },
       {
         "type": "heading",
-        "id": "como-evoluir",
-        "text": "Como evoluir sem sobrecarregar a operação"
+        "id": "indicadores",
+        "text": "Acompanhe indicadores que levem a uma ação"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Pessoas que ainda não iniciaram uma trilha obrigatória.",
+          "Módulos com maior abandono ou dificuldade.",
+          "Desempenho por equipe, unidade ou perfil.",
+          "Conteúdos vencidos que precisam de revisão.",
+          "Tempo entre entrada da pessoa e conclusão da integração."
+        ]
       },
       {
         "type": "paragraph",
-        "text": "Comece pelos treinamentos obrigatórios ou pelos processos que mais geram erro. Depois, amplie para trilhas de onboarding, reciclagens, campanhas específicas e conteúdos por área. O ganho vem da consistência, não da quantidade inicial de aulas."
+        "text": "O objetivo do acompanhamento não é apenas cobrar. Os dados devem ajudar a identificar barreiras, ajustar conteúdos e oferecer suporte onde ele é mais necessário."
       }
     ]
   },
   {
     "slug": "indicadores-gestao-operacao-distribuida",
-    "title": "Indicadores para gestão de operação distribuída: quais dados olhar primeiro",
-    "excerpt": "Dados demais podem atrapalhar. Saiba quais indicadores ajudam uma central a acompanhar unidades, campanhas e processos sem perder foco.",
-    "category": "Dados e BI",
-    "tags": ["indicadores", "BI", "gestão", "operação"],
+    "title": "Indicadores de gestão: quais dados acompanhar em uma operação distribuída",
+    "excerpt": "Uma boa visão de gestão começa com poucas métricas confiáveis. Saiba como escolher indicadores que apoiem decisões em redes com várias unidades.",
+    "category": "Dados & BI",
+    "tags": ["indicadores", "BI", "dados", "gestão"],
     "author": "Equipe Bahdev",
-    "publishedAt": "2026-07-02",
-    "updatedAt": "2026-07-02",
+    "publishedAt": "2026-07-03",
+    "updatedAt": "2026-07-03",
     "readTime": "5 min de leitura",
     "featured": false,
     "cover": "dashboards",
-    "coverAlt": "Dashboard com indicadores de gestão",
-    "seoTitle": "Indicadores para gestão de operação distribuída | Bahdev",
-    "seoDescription": "Veja quais dados acompanhar primeiro para gerir unidades, campanhas e processos com mais clareza.",
+    "coverAlt": "Dashboard com indicadores consolidados de uma operação",
+    "seoTitle": "Indicadores para operações com várias unidades | Bahdev",
+    "seoDescription": "Aprenda a escolher indicadores confiáveis para acompanhar desempenho, adesão e eficiência em redes com várias unidades.",
     "blocks": [
       {
         "type": "paragraph",
-        "text": "Uma operação distribuída produz muitos sinais: acessos, solicitações, campanhas, treinamentos, vendas, atendimento e pendências. O desafio é transformar esse volume em decisões simples. Dados úteis são aqueles que indicam onde agir."
+        "text": "Ter muitos dados não garante uma boa decisão. Em redes com várias unidades, o primeiro desafio é assegurar que todos estão comparando a mesma coisa: período, origem, regra de cálculo e atualização. Sem essa base, o dashboard pode apenas acelerar discussões sobre qual número está correto."
+      },
+      {
+        "type": "paragraph",
+        "text": "Indicadores úteis respondem a uma pergunta de negócio e apontam para uma ação. Antes de adicionar um gráfico, deixe claro qual decisão ele deve apoiar e quem será responsável por acompanhar o resultado."
       },
       {
         "type": "heading",
-        "id": "comece-pelo-essencial",
-        "text": "Comece pelo essencial"
+        "id": "camadas-de-indicadores",
+        "text": "Organize os indicadores em três camadas"
       },
       {
         "type": "list",
         "items": [
-          "Aderência: quem acessou, respondeu ou concluiu.",
-          "Pendências: o que está atrasado ou sem responsável.",
-          "Volume: quantidade de solicitações, campanhas ou atendimentos.",
-          "Tempo: quanto demora para concluir cada etapa.",
-          "Comparação: diferenças entre unidades, regiões ou perfis."
+          "Resultado: mostra o que a operação entregou, como volume, receita ou conclusão.",
+          "Eficiência: mostra recursos e tempo usados para chegar ao resultado.",
+          "Qualidade e adesão: mostra se o padrão esperado está sendo seguido e percebido."
         ]
       },
       {
         "type": "paragraph",
-        "text": "Esses indicadores criam uma base para perguntas melhores. Em vez de discutir percepções, a gestão passa a investigar causas: por que uma região conclui mais rápido? Por que uma campanha teve baixa adesão? Onde a comunicação não chegou?"
+        "text": "As três perspectivas evitam análises isoladas. Um aumento de volume pode parecer positivo, mas precisa ser interpretado junto com custo, tempo, margem ou qualidade, conforme o processo analisado."
+      },
+      {
+        "type": "heading",
+        "id": "mesma-regra",
+        "text": "A mesma regra precisa valer para toda a rede"
+      },
+      {
+        "type": "paragraph",
+        "text": "Defina um pequeno catálogo de indicadores com nome, objetivo, fórmula, fonte, frequência e responsável. Quando houver exceções entre unidades, registre-as. A transparência da regra é tão importante quanto a visualização."
       },
       {
         "type": "callout",
-        "title": "Dashboard não substitui gestão",
-        "text": "O painel organiza a leitura. A decisão continua dependendo de contexto, prioridade e acompanhamento."
+        "title": "Comece pelo confiável",
+        "text": "É melhor acompanhar cinco indicadores consistentes e acionáveis do que publicar dezenas de métricas que ninguém consegue explicar ou usar."
       },
       {
         "type": "heading",
-        "id": "visualizar-para-agir",
-        "text": "Visualizar para agir"
+        "id": "visao-central-e-local",
+        "text": "Combine a visão consolidada com o contexto local"
       },
       {
         "type": "paragraph",
-        "text": "Um bom painel não precisa mostrar tudo. Ele precisa mostrar o que mudou, o que exige atenção e qual recorte ajuda a entender o problema. Filtros por unidade, região, campanha e período tornam a análise mais rápida."
+        "text": "A central precisa identificar tendências e comparar unidades. A unidade precisa entender sua própria evolução e onde agir. O mesmo ambiente pode oferecer as duas leituras, respeitando perfis de acesso e evitando que cada área mantenha uma planilha paralela."
       },
       {
         "type": "heading",
-        "id": "rotina-de-acompanhamento",
-        "text": "Crie uma rotina de acompanhamento"
+        "id": "ritual-de-gestao",
+        "text": "Transforme o dashboard em um ritual de gestão"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Revise indicadores em uma frequência compatível com a decisão.",
+          "Registre responsáveis e próximos passos para desvios relevantes.",
+          "Use filtros por período, região, unidade ou perfil quando fizer sentido.",
+          "Reavalie métricas que não geram perguntas ou ações.",
+          "Documente mudanças de fonte ou cálculo para preservar o histórico."
+        ]
       },
       {
         "type": "paragraph",
-        "text": "Indicadores geram valor quando entram na rotina. Defina poucos números para olhar semanalmente, combine responsáveis por acompanhamento e use os dados para orientar conversas com a rede. O objetivo é reduzir surpresa e aumentar previsibilidade."
+        "text": "Quando o dado entra na rotina de decisão, ele deixa de ser apenas um relatório. Passa a funcionar como uma linguagem comum entre central, gestores e unidades."
       }
     ]
   }

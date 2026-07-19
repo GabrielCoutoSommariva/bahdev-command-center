@@ -15,9 +15,15 @@ import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import SolutionsPopup from "@/components/SolutionsPopup";
+import SEO from "@/components/SEO";
 
 const Index = () => (
   <>
+    <SEO
+      title="Bahdev | Gestão centralizada para redes e associações"
+      description="Centralize a gestão, a comunicação, o atendimento e o treinamento da sua rede com as soluções modulares da Bahdev."
+      path="/"
+    />
     <Navbar />
     <main>
       <Hero />
