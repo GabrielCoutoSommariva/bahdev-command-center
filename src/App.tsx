@@ -12,6 +12,7 @@ import Portal from "./pages/Portal.tsx";
 import Dashboards from "./pages/Dashboards.tsx";
 import Campanhas from "./pages/Campanhas.tsx";
 import Treinamento from "./pages/Treinamento.tsx";
+import Sesson from "./pages/Sesson.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const Blog = lazy(() => import("./pages/Blog.tsx"));
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/dashboards" element={<Dashboards />} />
             <Route path="/campanhas" element={<Campanhas />} />
             <Route path="/treinamento" element={<Treinamento />} />
+            <Route path="/sesson" element={<Sesson />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/admin" element={<Navigate to="/admin/blog" replace />} />

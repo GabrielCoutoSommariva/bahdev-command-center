@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import type { ReactNode } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -16,6 +17,7 @@ export interface ProductPageProps {
   description: string;
   heroIcon: LucideIcon;
   screenshot?: string;
+  screenshotSlot?: ReactNode;
   features: Item[];
   benefits: Item[];
   highlights: string[];
@@ -29,6 +31,7 @@ const ProductPage = ({
   description,
   heroIcon: HeroIcon,
   screenshot,
+  screenshotSlot,
   features,
   benefits,
   highlights,
@@ -77,6 +80,11 @@ const ProductPage = ({
             <div className="rounded-xl overflow-hidden shadow-product border border-border">
               <img src={screenshot} alt={title} className="w-full h-auto" />
             </div>
+          </AnimatedBlock>
+        )}
+        {screenshotSlot && (
+          <AnimatedBlock delay={0.15} className="mt-14 sm:mt-16 max-w-lg mx-auto px-6">
+            {screenshotSlot}
           </AnimatedBlock>
         )}
       </SectionWrapper>

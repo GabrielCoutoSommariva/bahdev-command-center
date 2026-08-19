@@ -13,6 +13,7 @@ const staticRoutes = [
   { path: "/omnichannel", priority: "0.8", changefreq: "monthly" },
   { path: "/portal", priority: "0.8", changefreq: "monthly" },
   { path: "/treinamento", priority: "0.8", changefreq: "monthly" },
+  { path: "/sesson", priority: "0.8", changefreq: "monthly" },
   { path: "/dashboards", priority: "0.6", changefreq: "monthly" },
   { path: "/campanhas", priority: "0.6", changefreq: "monthly" },
   { path: "/blog", priority: "0.9", changefreq: "weekly" },
