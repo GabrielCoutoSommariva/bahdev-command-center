@@ -1,5 +1,5 @@
 import ProductPage from "@/components/ProductPage";
-import MockupCard from "@/components/mockups/MockupCard";
+import SessonDashboardMockup from "@/components/mockups/SessonDashboardMockup";
 import {
   CalendarCheck, CalendarClock, Users, NotebookPen, Wallet, FileCheck2,
   MessageCircle, BellRing, Clock, Globe, ShieldCheck,
@@ -11,20 +11,7 @@ const Sesson = () => (
     title="Sesson"
     description="Agenda, clientes e financeiro num só lugar. A plataforma da Bahdev para o profissional autônomo organizar a rotina de atendimentos sem depender de planilhas ou grupos de WhatsApp."
     heroIcon={CalendarCheck}
-    screenshotSlot={(
-      <MockupCard
-        appLabel="Sesson — Agenda"
-        chipIcon={BellRing}
-        chipTitle="Confirmado no WhatsApp"
-        chipSub="Lembrete enviado automaticamente"
-        chipSide="left"
-        items={[
-          { time: "09:00", title: "Ana Souza", subtitle: "Sessão inicial", status: "done" },
-          { time: "11:30", title: "Carlos Lima", subtitle: "Retorno", status: "done" },
-          { time: "14:00", title: "Júlia Prado", subtitle: "Avaliação", status: "pending" },
-        ]}
-      />
-    )}
+    screenshotSlot={<SessonDashboardMockup className="max-w-md mx-auto" />}
     features={[
       { icon: CalendarClock, title: "Agenda inteligente", desc: "Compromissos do dia, da semana e do mês num painel único." },
       { icon: Users, title: "Cadastro de clientes", desc: "Contato, histórico e preferências organizados por cliente." },

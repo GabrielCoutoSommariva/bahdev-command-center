@@ -28,16 +28,16 @@ const buttonVariants = cva(
           "text-primary underline-offset-4 hover:underline",
 
         hero:
-          "bg-primary !text-white hover:bg-primary-deep hover:!text-white hover:shadow-lg active:scale-[0.97] text-cta rounded-lg",
+          "bg-primary !text-white hover:bg-primary-deep hover:!text-white hover:shadow-lg hover:shadow-primary/25 active:scale-[0.97] text-cta !rounded-full",
 
         "hero-light":
-          "bg-white !text-primary hover:bg-white/90 hover:!text-primary hover:shadow-lg active:scale-[0.97] text-cta rounded-lg",
+          "bg-white !text-primary hover:bg-white/90 hover:!text-primary hover:shadow-lg active:scale-[0.97] text-cta !rounded-full",
 
         "hero-outline":
-          "border-2 border-primary bg-transparent !text-primary hover:bg-primary/10 hover:!text-primary active:scale-[0.97] text-cta rounded-lg font-semibold",
+          "border-2 border-primary/30 bg-transparent !text-primary hover:border-primary hover:bg-primary/5 hover:!text-primary active:scale-[0.97] text-cta !rounded-full font-semibold",
 
         "cta-outline-white":
-          "border-2 border-white bg-transparent !text-white hover:bg-white hover:!text-primary hover:shadow-lg active:scale-[0.97] text-cta rounded-lg font-semibold",
+          "border-2 border-white/40 bg-transparent !text-white hover:border-white hover:bg-white hover:!text-primary hover:shadow-lg active:scale-[0.97] text-cta !rounded-full font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

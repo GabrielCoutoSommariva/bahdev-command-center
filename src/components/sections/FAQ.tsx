@@ -1,4 +1,4 @@
-import { SectionWrapper, AnimatedBlock } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow } from "./SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -17,7 +17,7 @@ const faqs = [
 const FAQ = () => (
   <SectionWrapper id="faq">
     <AnimatedBlock className="text-center mb-10">
-      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">FAQ</p>
+      <Eyebrow>FAQ</Eyebrow>
       <h2 className="text-section text-foreground">Tire suas dúvidas</h2>
     </AnimatedBlock>
 

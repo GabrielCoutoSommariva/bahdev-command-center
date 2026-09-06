@@ -28,6 +28,20 @@ const AnimatedBlock = ({ children, className, delay = 0 }: { children: ReactNode
   </motion.div>
 );
 
+const Eyebrow = ({ children, tone = "light", className }: { children: ReactNode; tone?: "light" | "dark"; className?: string }) => (
+  <span
+    className={cn(
+      "inline-flex items-center rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] mb-4",
+      tone === "light"
+        ? "border border-primary/20 bg-primary/10 text-primary"
+        : "border border-white/15 bg-white/10 text-white/85",
+      className,
+    )}
+  >
+    {children}
+  </span>
+);
+
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.05 } },
@@ -38,4 +52,4 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
-export { SectionWrapper, AnimatedBlock, containerVariants, itemVariants };
+export { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants };

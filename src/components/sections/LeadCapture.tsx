@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SectionWrapper, AnimatedBlock } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow } from "./SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, UserCheck, Send } from "lucide-react";
 import { z } from "zod";
@@ -109,7 +109,7 @@ const LeadCapture = () => {
     <SectionWrapper>
       <div className="grid lg:grid-cols-2 gap-10 items-start max-w-4xl mx-auto">
         <AnimatedBlock>
-          <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Contato</p>
+          <Eyebrow>Contato</Eyebrow>
           <h2 className="text-section text-foreground mb-4">Fale com a Bahdev</h2>
           <p className="text-body text-muted-foreground max-w-[45ch] mb-5">
             Envie sua dúvida, ideia ou necessidade. Nossa equipe retorna com o melhor caminho.

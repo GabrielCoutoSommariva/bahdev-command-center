@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants } from "./SectionWrapper";
 import { LayoutDashboard, GitPullRequestArrow, MessageCircle, BarChart4, Megaphone, Wallet, ShieldCheck, Puzzle, Bot } from "lucide-react";
 import solutionScreenshot from "@/assets/farmacias-dashboard.png";
 import encarteScreenshot from "@/assets/bahdev-encartes.png";
@@ -62,10 +62,13 @@ const SolutionGallery = () => {
 };
 
 const Solution = () => (
-  <SectionWrapper id="solucao">
+  <SectionWrapper
+    id="solucao"
+    className="bg-[radial-gradient(circle_at_top_right,hsl(var(--primary)/0.08),transparent_45%)]"
+  >
     <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
       <AnimatedBlock>
-        <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">A solução</p>
+        <Eyebrow>A solução</Eyebrow>
         <h2 className="text-section text-foreground mb-4">Plataforma modular: rotina vira processo</h2>
         <p className="text-body text-muted-foreground max-w-[50ch]">
           Um portal para gestão, comunicação e operação — ative módulos conforme sua rede amadurece.

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants } from "./SectionWrapper";
 import { Volume2, Eye, Zap, Layers, LineChart, Expand } from "lucide-react";
 
 const benefits = [
@@ -23,7 +23,7 @@ const differentials = [
 const Benefits = () => (
   <SectionWrapper id="beneficios">
     <AnimatedBlock className="text-center mb-10">
-      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Benefícios</p>
+      <Eyebrow>Benefícios</Eyebrow>
       <h2 className="text-section text-foreground">O que muda na prática</h2>
     </AnimatedBlock>
 
@@ -47,7 +47,7 @@ const Benefits = () => (
 
     {/* Differentials */}
     <AnimatedBlock className="text-center mb-8">
-      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Diferenciais</p>
+      <Eyebrow>Diferenciais</Eyebrow>
       <h3 className="text-card-title text-foreground">Portal pensado para rede, não "mais um sistema".</h3>
     </AnimatedBlock>
 

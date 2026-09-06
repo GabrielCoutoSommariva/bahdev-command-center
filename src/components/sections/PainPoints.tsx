@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants } from "./SectionWrapper";
 import { MessageSquareWarning, Repeat, Eye, AlertTriangle } from "lucide-react";
 
 const pains = [
@@ -12,7 +12,7 @@ const pains = [
 const PainPoints = () => (
   <SectionWrapper className="bg-section-dark" id="dores">
     <AnimatedBlock className="text-center mb-10">
-      <p className="text-caption font-semibold mb-2 uppercase tracking-wider opacity-60">Reconhece esse cenário?</p>
+      <Eyebrow tone="dark">Reconhece esse cenário?</Eyebrow>
       <h2 className="text-section">Os sinais de uma operação sem controle</h2>
     </AnimatedBlock>
 

@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
-import { ArrowRight, CalendarCheck } from "lucide-react";
+import { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants } from "./SectionWrapper";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import omnichannelImage from "@/assets/omnichannel-platform.png";
 import portalImage from "@/assets/farmacias-portal.png";
 import treinamentoImage from "@/assets/dashboard-bahdev-treinamento.png";
+import sessonIcon from "@/assets/sesson-icon.png";
 
 type Product = {
   title: string;
@@ -57,8 +58,8 @@ const products: Product[] = [
 const SessonMiniPreview = () => (
   <div className="h-full w-full p-3 flex flex-col gap-1.5 bg-gradient-to-br from-emerald-50 to-card">
     <div className="flex items-center gap-1.5 mb-0.5">
-      <CalendarCheck className="h-3.5 w-3.5 text-emerald-600" />
-      <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">Agenda de hoje</span>
+      <img src={sessonIcon} alt="" className="h-3.5 w-3.5 rounded-[4px]" />
+      <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">Sesson · Agenda de hoje</span>
     </div>
     {[
       { time: "09:00", title: "Ana Souza", status: "done" as const },
@@ -75,11 +76,12 @@ const SessonMiniPreview = () => (
 );
 
 const Products = () => (
-  <SectionWrapper id="produtos" className="bg-muted/30">
+  <SectionWrapper
+    id="produtos"
+    className="bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.07),transparent_50%),linear-gradient(180deg,hsl(var(--muted)/0.5),hsl(var(--muted)/0.25))]"
+  >
     <AnimatedBlock className="text-center mb-10 max-w-2xl mx-auto">
-      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">
-        Produtos Bahdev
-      </p>
+      <Eyebrow>Produtos Bahdev</Eyebrow>
       <h2 className="text-section text-foreground mb-3">
         Soluções modulares para sua operação
       </h2>

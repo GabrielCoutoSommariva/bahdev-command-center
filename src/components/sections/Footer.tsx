@@ -98,6 +98,7 @@ const Footer = () => (
           <ul className="space-y-1.5 text-xs opacity-60">
             <li><a href="/#demo" className="hover:opacity-100">Fale conosco</a></li>
             <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-100">WhatsApp</a></li>
+            <li><a href="/politica-de-privacidade" className="hover:opacity-100">Política de Privacidade</a></li>
           </ul>
         </div>
       </div>
@@ -132,8 +133,11 @@ const Footer = () => (
           </div>
         ))}
       </div>
-      <div className="mt-8 pt-6 border-t border-muted/10 text-center">
+      <div className="mt-8 pt-6 border-t border-muted/10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
         <p className="text-xs opacity-40">© {new Date().getFullYear()} Bahdev. Todos os direitos reservados.</p>
+        <a href="/politica-de-privacidade" className="text-xs opacity-40 hover:opacity-80 underline underline-offset-2">
+          Política de Privacidade
+        </a>
       </div>
     </div>
   </footer>
