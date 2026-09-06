@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound.tsx";
 
 const Blog = lazy(() => import("./pages/Blog.tsx"));
 const BlogPost = lazy(() => import("./pages/BlogPost.tsx"));
+const Privacidade = lazy(() => import("./pages/Privacidade.tsx"));
 const AdminProtectedRoute = lazy(() => import("./components/admin/AdminProtectedRoute.tsx"));
 const AdminLayout = lazy(() => import("./components/admin/AdminLayout.tsx"));
 const AdminLogin = lazy(() => import("./pages/admin/AdminLogin.tsx"));
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/sesson" element={<Sesson />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/politica-de-privacidade" element={<Privacidade />} />
             <Route path="/admin" element={<Navigate to="/admin/blog" replace />} />
             <Route path="/admin/blog/login" element={<AdminLogin />} />
             <Route

@@ -17,6 +17,7 @@ const staticRoutes = [
   { path: "/dashboards", priority: "0.6", changefreq: "monthly" },
   { path: "/campanhas", priority: "0.6", changefreq: "monthly" },
   { path: "/blog", priority: "0.9", changefreq: "weekly" },
+  { path: "/politica-de-privacidade", priority: "0.3", changefreq: "yearly" },
 ];
 
 const urls = [
