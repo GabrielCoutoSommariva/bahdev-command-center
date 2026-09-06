@@ -19,7 +19,7 @@ const sections: PolicySection[] = [
   {
     title: "1. Quem somos",
     paragraphs: [
-      "A Bahdev (\"nós\") é a controladora dos dados pessoais tratados por meio do site www.bahdev.com.br. Estamos localizados na Tv. São José, 455, Navegantes, Porto Alegre - RS, CEP 90240-200.",
+      "A Bahdev (\"nós\") é a controladora dos dados pessoais tratados por meio do site www.bahdev.com.br. Esta política também cobre a plataforma de software contratada por organizações clientes, situação em que a Bahdev atua como operadora, tratando dados em nome dessas organizações — conforme detalhado na seção 10. Estamos localizados na Tv. São José, 455, Navegantes, Porto Alegre - RS, CEP 90240-200.",
       "Esta Política de Privacidade explica, de forma transparente, quais dados pessoais coletamos, por que coletamos, como usamos e quais são os seus direitos, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD).",
     ],
   },
@@ -101,17 +101,35 @@ const sections: PolicySection[] = [
   {
     title: "9. Crianças e adolescentes",
     paragraphs: [
-      "O site da Bahdev é direcionado a empresas e profissionais. Não coletamos intencionalmente dados pessoais de crianças ou adolescentes.",
+      "O site institucional da Bahdev é direcionado a empresas e profissionais. Não coletamos intencionalmente, por meio do site, dados pessoais de crianças ou adolescentes.",
+      "Na plataforma, eventuais dados de crianças ou adolescentes tratados em nome de uma organização cliente são de responsabilidade dessa organização, que é a controladora desses dados — a Bahdev atua apenas como operadora, conforme a seção 10.",
     ],
   },
   {
-    title: "10. Alterações desta política",
+    title: "10. Dados tratados na plataforma Bahdev",
+    paragraphs: [
+      "Além do site institucional, a Bahdev oferece uma plataforma de software contratada por organizações clientes, como associações, cooperativas, redes e franquias. Nesse contexto, a organização cliente é a controladora dos dados pessoais de seus associados, clientes e contatos, e a Bahdev atua como operadora, tratando esses dados exclusivamente para executar o serviço contratado e segundo as instruções dessa organização.",
+      "Quando a organização cliente conecta sua própria conta do WhatsApp Business à plataforma, autorizando esse acesso no momento da conexão, passamos a tratar em nome dela:",
+    ],
+    bullets: [
+      "Identificação da conta e do número de WhatsApp Business autorizados.",
+      "Mensagens trocadas entre a organização e o público dela.",
+      "Modelos de mensagem utilizados em comunicados e notificações.",
+      "Status de envio, entrega e leitura dessas mensagens.",
+    ],
+    afterBullets: [
+      "Esses dados são utilizados apenas para operar o atendimento daquela organização dentro da plataforma. Não são vendidos, não são compartilhados com terceiros para finalidades próprias da Bahdev, não são usados para publicidade e não são combinados com dados de outras organizações clientes. Ao término do contrato, são eliminados ou devolvidos à organização, conforme instrução dela.",
+      "Titulares que desejem exercer seus direitos sobre dados tratados na plataforma devem procurar a organização controladora com quem se relacionam. A Bahdev apoia essa organização no atendimento da solicitação, no prazo e na forma previstos em contrato.",
+    ],
+  },
+  {
+    title: "11. Alterações desta política",
     paragraphs: [
       "Podemos atualizar esta Política de Privacidade para refletir mudanças no site, em ferramentas utilizadas ou na legislação. A versão vigente estará sempre publicada nesta página, com a data de atualização indicada no topo.",
     ],
   },
   {
-    title: "11. Contato",
+    title: "12. Contato",
     paragraphs: [
       "Em caso de dúvidas sobre esta política ou sobre o tratamento dos seus dados pessoais, fale com a gente:",
     ],
