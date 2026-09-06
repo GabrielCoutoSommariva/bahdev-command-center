@@ -185,8 +185,8 @@ const LearningExperiencePreview = () => (
 const Treinamento = () => (
   <>
     <Navbar />
-    <main className="pt-16">
-      <SectionWrapper className="overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(11,107,255,0.16),transparent_36%),linear-gradient(180deg,rgba(11,107,255,0.08),rgba(255,255,255,1)_70%)]">
+    <main>
+      <SectionWrapper className="overflow-hidden !pt-28 md:!pt-32 bg-[radial-gradient(circle_at_top_left,rgba(11,107,255,0.16),transparent_36%),linear-gradient(180deg,rgba(11,107,255,0.08),rgba(255,255,255,1)_70%)]">
         <div className="mb-8">
           <Link
             to="/"

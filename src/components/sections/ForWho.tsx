@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants } from "./SectionWrapper";
 import { Building2, Users, Network, Briefcase } from "lucide-react";
 
 const segments = [
@@ -32,7 +32,7 @@ const segments = [
 const ForWho = () => (
   <SectionWrapper id="para-quem">
     <AnimatedBlock className="text-center mb-10">
-      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Para quem é</p>
+      <Eyebrow>Para quem é</Eyebrow>
       <h2 className="text-section text-foreground">Controle sem perder agilidade</h2>
     </AnimatedBlock>
 

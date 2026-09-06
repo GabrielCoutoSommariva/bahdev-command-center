@@ -40,17 +40,17 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border">
-      <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 max-w-6xl flex items-center justify-between h-16">
+    <header className="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6">
+      <div className="container mx-auto max-w-5xl flex items-center justify-between h-14 rounded-full border border-border/70 bg-card/85 backdrop-blur-xl shadow-card px-4 sm:px-6">
         <Link to="/" aria-label="Bahdev — voltar à página inicial" className="flex items-center">
           <img
             src={logoBlue}
             alt="Bahdev"
-            className="h-10 w-auto object-contain"
+            className="h-8 w-auto object-contain"
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -62,11 +62,11 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm" asChild>
+        <div className="hidden md:flex items-center gap-2">
+          <Button variant="ghost" size="sm" className="rounded-full" asChild>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </Button>
-          <Button variant="hero" size="lg" asChild>
+          <Button variant="hero" size="default" asChild>
             <a href="/#demo" onClick={handleDemoClick}>Fale conosco</a>
           </Button>
         </div>
@@ -82,8 +82,8 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div className={cn(
-        "md:hidden overflow-hidden transition-all duration-300 bg-card border-b border-border",
-        open ? "max-h-96" : "max-h-0 border-none"
+        "md:hidden container mx-auto max-w-5xl mt-2 overflow-hidden rounded-2xl transition-all duration-300",
+        open ? "max-h-96 border border-border bg-card shadow-card-hover" : "max-h-0"
       )}>
         <div className="px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (

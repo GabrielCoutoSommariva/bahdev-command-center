@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants } from "./SectionWrapper";
 import { Search, Settings, GraduationCap, Rocket, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -19,33 +19,47 @@ const quickWins = [
 ];
 
 const HowItWorks = () => (
-  <SectionWrapper className="bg-muted/50" id="como-funciona">
+  <SectionWrapper
+    className="bg-[radial-gradient(circle_at_bottom_left,hsl(var(--accent)/0.1),transparent_45%),linear-gradient(180deg,hsl(var(--muted)/0.6),hsl(var(--muted)/0.3))]"
+    id="como-funciona"
+  >
     <AnimatedBlock className="text-center mb-10">
-      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">Como funciona</p>
+      <Eyebrow>Como funciona</Eyebrow>
       <h2 className="text-section text-foreground mb-3">Implantação rápida, evolução contínua</h2>
       <p className="text-body text-muted-foreground max-w-xl mx-auto">
         Não precisa mudar tudo de uma vez. A Bahdev organiza o essencial e evolui com sua operação.
       </p>
     </AnimatedBlock>
 
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto mb-10"
-    >
-      {steps.map((step) => (
-        <motion.div key={step.num} variants={itemVariants} className="text-center p-4">
-          <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <step.icon className="h-5 w-5 text-primary" />
-          </div>
-          <span className="text-xs text-primary font-bold">{step.num}</span>
-          <h3 className="text-sm font-bold text-foreground mt-0.5 mb-1">{step.title}</h3>
-          <p className="text-xs text-muted-foreground">{step.desc}</p>
-        </motion.div>
-      ))}
-    </motion.div>
+    <div className="relative max-w-5xl mx-auto mb-10">
+      <div className="hidden lg:block absolute top-[26px] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"
+      >
+        {steps.map((step) => (
+          <motion.div
+            key={step.num}
+            variants={itemVariants}
+            className="relative text-center p-5 rounded-2xl bg-card border border-border/60 shadow-card hover:shadow-card-hover hover:border-primary/25 transition-all"
+          >
+            <div className="relative w-[52px] h-[52px] mx-auto mb-3">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-primary to-primary-deep flex items-center justify-center shadow-lg shadow-primary/25">
+                <step.icon className="h-5 w-5 text-white" />
+              </div>
+              <span className="absolute -top-1 -right-1.5 grid place-items-center h-5 min-w-5 rounded-full bg-accent text-[10px] font-extrabold text-foreground px-1">
+                {step.num}
+              </span>
+            </div>
+            <h3 className="text-sm font-bold text-foreground mb-1">{step.title}</h3>
+            <p className="text-xs text-muted-foreground">{step.desc}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
 
     {/* Quick wins */}
     <AnimatedBlock delay={0.1} className="max-w-4xl mx-auto mb-10">

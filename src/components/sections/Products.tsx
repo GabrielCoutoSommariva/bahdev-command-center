@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { SectionWrapper, AnimatedBlock, containerVariants, itemVariants } from "./SectionWrapper";
+import { SectionWrapper, AnimatedBlock, Eyebrow, containerVariants, itemVariants } from "./SectionWrapper";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import omnichannelImage from "@/assets/omnichannel-platform.png";
 import portalImage from "@/assets/farmacias-portal.png";
 import treinamentoImage from "@/assets/dashboard-bahdev-treinamento.png";
+import sessonIcon from "@/assets/sesson-icon.png";
 
 type Product = {
   title: string;
   desc: string;
   badge: string;
   to: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   accent: string;
 };
 
@@ -45,20 +46,48 @@ const products: Product[] = [
     imageAlt: "Dashboard de treinamento com indicadores, cursos e status de alunos",
     accent: "from-blue-600/20 via-sky-400/10 to-transparent",
   },
+  {
+    title: "Sesson",
+    desc: "Agenda, clientes e financeiro num só lugar — a plataforma Bahdev para o profissional autônomo.",
+    badge: "Novo produto",
+    to: "/sesson",
+    accent: "from-emerald-500/20 via-teal-400/10 to-transparent",
+  },
 ];
 
+const SessonMiniPreview = () => (
+  <div className="h-full w-full p-3 flex flex-col gap-1.5 bg-gradient-to-br from-emerald-50 to-card">
+    <div className="flex items-center gap-1.5 mb-0.5">
+      <img src={sessonIcon} alt="" className="h-3.5 w-3.5 rounded-[4px]" />
+      <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">Sesson · Agenda de hoje</span>
+    </div>
+    {[
+      { time: "09:00", title: "Ana Souza", status: "done" as const },
+      { time: "11:30", title: "Carlos Lima", status: "done" as const },
+      { time: "14:00", title: "Júlia Prado", status: "pending" as const },
+    ].map((row) => (
+      <div key={row.time} className="flex items-center gap-2 rounded-lg bg-white/70 px-2.5 py-1.5">
+        <span className="text-[10px] font-bold text-muted-foreground tabular-nums">{row.time}</span>
+        <span className="text-[11px] font-semibold text-card-foreground truncate flex-1">{row.title}</span>
+        <span className={`h-1.5 w-1.5 rounded-full shrink-0 ${row.status === "done" ? "bg-success" : "bg-warning"}`} />
+      </div>
+    ))}
+  </div>
+);
+
 const Products = () => (
-  <SectionWrapper id="produtos" className="bg-muted/30">
+  <SectionWrapper
+    id="produtos"
+    className="bg-[radial-gradient(circle_at_top,hsl(var(--primary)/0.07),transparent_50%),linear-gradient(180deg,hsl(var(--muted)/0.5),hsl(var(--muted)/0.25))]"
+  >
     <AnimatedBlock className="text-center mb-10 max-w-2xl mx-auto">
-      <p className="text-caption text-primary font-semibold mb-2 uppercase tracking-wider">
-        Produtos Bahdev
-      </p>
+      <Eyebrow>Produtos Bahdev</Eyebrow>
       <h2 className="text-section text-foreground mb-3">
         Soluções modulares para sua operação
       </h2>
       <p className="text-body text-muted-foreground">
-        Conheça os módulos que compõem o ecossistema Bahdev. Ative o que faz sentido hoje
-        e expanda conforme sua rede cresce.
+        Conheça os produtos que compõem o ecossistema Bahdev — para sua rede ou para
+        a sua operação individual. Ative o que faz sentido hoje e expanda conforme cresce.
       </p>
     </AnimatedBlock>
 
@@ -67,7 +96,7 @@ const Products = () => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
+      className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 max-w-6xl mx-auto"
     >
       {products.map((p) => {
         const content = (
@@ -78,12 +107,18 @@ const Products = () => (
             className="group h-full overflow-hidden rounded-2xl bg-card border border-border shadow-card hover:shadow-card-hover transition-shadow flex flex-col"
           >
             <div className="relative h-40 overflow-hidden bg-muted">
-              <img
-                src={p.image}
-                alt={p.imageAlt}
-                className="h-full w-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
+              {p.image ? (
+                <img
+                  src={p.image}
+                  alt={p.imageAlt}
+                  className="h-full w-full object-cover object-left-top transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+                  <SessonMiniPreview />
+                </div>
+              )}
               <div className={`absolute inset-0 bg-gradient-to-br ${p.accent}`} />
               <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-card to-transparent" />
               <span className="absolute right-5 top-5 text-[10px] font-semibold text-primary bg-white/90 rounded-full px-2.5 py-1 uppercase tracking-wider shadow-sm backdrop-blur">
