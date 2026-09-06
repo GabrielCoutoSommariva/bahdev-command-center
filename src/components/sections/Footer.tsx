@@ -99,6 +99,7 @@ const Footer = () => (
             <li><a href="/#demo" className="hover:opacity-100">Fale conosco</a></li>
             <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-100">WhatsApp</a></li>
             <li><a href="/politica-de-privacidade" className="hover:opacity-100">Política de Privacidade</a></li>
+            <li><a href="/termos-de-uso" className="hover:opacity-100">Termos de Uso</a></li>
           </ul>
         </div>
       </div>
@@ -137,6 +138,9 @@ const Footer = () => (
         <p className="text-xs opacity-40">© {new Date().getFullYear()} Bahdev. Todos os direitos reservados.</p>
         <a href="/politica-de-privacidade" className="text-xs opacity-40 hover:opacity-80 underline underline-offset-2">
           Política de Privacidade
+        </a>
+        <a href="/termos-de-uso" className="text-xs opacity-40 hover:opacity-80 underline underline-offset-2">
+          Termos de Uso
         </a>
       </div>
     </div>
